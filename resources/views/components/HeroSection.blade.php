@@ -1,0 +1,59 @@
+
+  <div
+    class="hero min-h-screen relative overflow-hidden bg-cover bg-center bg-no-repeat"
+    style="background-image: url('/hero.avif');">
+    <!-- Dark overlay/vignette -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60"></div>
+
+    <!-- Main content -->
+    <div class="hero-content relative lg:absolute lg:left-8 xl:left-16 2xl:left-24 lg:top-16 xl:top-20 2xl:top-24 flex-col items-start gap-8 sm:gap-10 md:gap-12 w-full max-w-full lg:max-w-2xl xl:max-w-3xl z-10 px-4 sm:px-6 md:px-8 lg:px-0 py-12 sm:py-16 lg:py-0">
+      <div class="flex flex-col gap-6 sm:gap-8">
+        <!-- Main heading -->
+        <h1 class="w-full">
+          <span class="text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Hit </span>
+          <span class="text-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">The </span>
+          <span class="text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Grounds </span>
+        </h1>
+
+        <!-- Description -->
+        <p class="text-base-content text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Poppins'] leading-relaxed max-w-prose">
+          Join us for Hit the Grounds – the annual cricket tournament organized by the Department of Computer Science and Engineering of the University of Moratuwa. Where the spirit from the university meets the drive from the industry, it's more than just a game, it's where passion and excellence collide!
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <button class="btn btn-outline btn-primary btn-sm sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto">
+            <span class="hidden sm:inline">View Tournament Schedule</span>
+            <span class="sm:hidden">View Schedule</span>
+          </button>
+          <button class="btn btn-primary btn-sm sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto">
+            Register
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats section -->
+      <div class="stats stats-vertical sm:stats-horizontal shadow-xl bg-base-100/10 backdrop-blur-sm w-full sm:w-auto lg:min-w-2xl">
+        <div class="stat place-items-center py-4 sm:py-6">
+          <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl">20+</div>
+          <div class="stat-title text-base-content font-['Poppins'] text-sm sm:text-base">Teams</div>
+        </div>
+        <div class="stat place-items-center py-4 sm:py-6">
+          <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl">300+</div>
+          <div class="stat-title text-base-content font-['Poppins'] text-sm sm:text-base">Participants</div>
+        </div>
+        <div class="stat place-items-center py-4 sm:py-6">
+          <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl">100%</div>
+          <div class="stat-title text-base-content font-['Poppins'] text-sm sm:text-base">Entertainment</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Player image - positioned on the right, hidden on mobile/tablet -->
+    <img
+      class="absolute right-0 lg:right-8 xl:right-16 2xl:right-32 top-0 h-full object-contain hidden lg:block opacity-90"
+      src="/player.avif"
+      alt="Cricket player"
+    />
+  </div>
