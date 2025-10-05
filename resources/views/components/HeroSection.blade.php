@@ -11,13 +11,13 @@
       <div class="flex flex-col gap-6 sm:gap-8">
         <!-- Main heading -->
         <h1 class="w-full">
-          <span class="text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Hit </span>
+          <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Hit </span>
           <span class="text-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">The </span>
-          <span class="text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Grounds </span>
+          <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Grounds </span>
         </h1>
 
         <!-- Description -->
-        <p class="text-base-content text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Poppins'] leading-relaxed max-w-prose">
+        <p class="text-white dark:text-base-content text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Poppins'] leading-relaxed max-w-prose">
           Join us for Hit the Grounds – the annual cricket tournament organized by the Department of Computer Science and Engineering of the University of Moratuwa. Where the spirit from the university meets the drive from the industry, it's more than just a game, it's where passion and excellence collide!
         </p>
 
@@ -37,15 +37,15 @@
       <div class="stats stats-vertical sm:stats-horizontal shadow-xl bg-base-100/10 backdrop-blur-sm w-full sm:w-auto lg:min-w-2xl">
         <div class="stat place-items-center py-4 sm:py-6">
           <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl">20+</div>
-          <div class="stat-title text-base-content font-['Poppins'] text-sm sm:text-base">Teams</div>
+          <div class="stat-title text-white dark:text-base-content font-['Poppins'] text-sm sm:text-base">Teams</div>
         </div>
         <div class="stat place-items-center py-4 sm:py-6">
           <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl">300+</div>
-          <div class="stat-title text-base-content font-['Poppins'] text-sm sm:text-base">Participants</div>
+          <div class="stat-title text-white dark:text-base-content font-['Poppins'] text-sm sm:text-base">Participants</div>
         </div>
         <div class="stat place-items-center py-4 sm:py-6">
           <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl">100%</div>
-          <div class="stat-title text-base-content font-['Poppins'] text-sm sm:text-base">Entertainment</div>
+          <div class="stat-title text-white dark:text-base-content font-['Poppins'] text-sm sm:text-base">Entertainment</div>
         </div>
       </div>
     </div>

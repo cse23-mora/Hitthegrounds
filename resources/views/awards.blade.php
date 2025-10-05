@@ -1,6 +1,6 @@
 <x-layouts.public>
         <!-- Hero Section -->
-    <section class="bg-base-200 py-12 sm:py-16 md:py-20 lg:py-24">
+    <section class="py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="container mx-auto px-4 sm:px-6 md:px-8">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-['Jolly_Lodger'] uppercase mb-6">
@@ -21,7 +21,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
 
           <!-- Champions Award -->
-          <div class="card bg-base-200 shadow-xl border border-base-300 hover:border-primary transition-all duration-300">
+          <div class="card bg-base-200 shadow-sm border-base-300 border-1 border border-base-300 hover:border-primary transition-all duration-300">
             <div class="card-body">
               <div class="flex items-center gap-4 mb-4">
                 <div class="avatar placeholder">
@@ -41,7 +41,7 @@
           </div>
 
           <!-- Runners-up Award -->
-          <div class="card bg-base-200 shadow-xl border border-base-300 hover:border-primary transition-all duration-300">
+          <div class="card bg-base-200 shadow-sm border-base-300 border-1 border border-base-300 hover:border-primary transition-all duration-300">
             <div class="card-body">
               <div class="flex items-center gap-4 mb-4">
                 <div class="avatar placeholder">
@@ -61,7 +61,7 @@
           </div>
 
           <!-- Player of the Tournament -->
-          <div class="card bg-base-200 shadow-xl border border-base-300 hover:border-primary transition-all duration-300">
+          <div class="card bg-base-200 shadow-sm border-base-300 border-1 border border-base-300 hover:border-primary transition-all duration-300">
             <div class="card-body">
               <div class="flex items-center gap-4 mb-4">
                 <div class="avatar placeholder">
@@ -81,7 +81,7 @@
           </div>
 
           <!-- Best Performing Players -->
-          <div class="card bg-base-200 shadow-xl border border-base-300 hover:border-primary transition-all duration-300">
+          <div class="card bg-base-200 shadow-sm border-base-300 border-1 border border-base-300 hover:border-primary transition-all duration-300">
             <div class="card-body">
               <div class="flex items-center gap-4 mb-4">
                 <div class="avatar placeholder">

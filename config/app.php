@@ -123,4 +123,17 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | JWT Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for JWT authentication
+    |
+    */
+
+    'jwt_secret' => env('JWT_SECRET'),
+    'jwt_algo' => env('JWT_ALGO', 'HS256'),
+    'jwt_ttl' => env('JWT_TTL', 43200), // TTL in minutes (default: 12 hours)
+
 ];
