@@ -1,0 +1,24 @@
+{
+  "name": "HTG Tournament",
+  "short_name": "HTG",
+  "description": "Annual cricket tournament hosted by the CSE Department, celebrating sportsmanship, teamwork, and university spirit",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1a1a1a",
+  "background_color": "#1a1a1a",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["sports", "cricket", "tournament", "university", "education"]
+}
