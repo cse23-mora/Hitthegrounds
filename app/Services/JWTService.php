@@ -1,0 +1,116 @@
+<?php
+
+namespace App\Services;
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+use App\Models\User;
+use Exception;
+
+class JWTService
+{
+    private string $secret;
+    private string $algo;
+    private int $ttl;
+
+    public function __construct()
+    {
+        $this->secret = base64_decode(config('app.jwt_secret'));
+        $this->algo = config('app.jwt_algo', 'HS256');
+        $this->ttl = config('app.jwt_ttl', 43200); // 1 month in minutes (30 days * 24 hours * 60 minutes = 43200)
+    }
+
+    /**
+     * Generate a JWT token for a user
+     */
+    public function generateToken(User $user): string
+    {
+        $issuedAt = time();
+        $expiresAt = $issuedAt + ($this->ttl * 60); // Convert minutes to seconds
+
+        $payload = [
+            'iat' => $issuedAt,
+            'exp' => $expiresAt,
+            'iss' => config('app.url'),
+            'sub' => $user->id,
+            'user' => [
+                'id' => $user->id,
+                'email' => $user->email,
+                'name' => $user->name,
+                'company_name' => $user->company_name,
+            ],
+        ];
+
+        $token = JWT::encode($payload, $this->secret, $this->algo);
+
+        // Store token in database
+        $user->update([
+            'jwt_token' => $token,
+            'jwt_expires_at' => now()->addMinutes($this->ttl),
+        ]);
+
+        return $token;
+    }
+
+    /**
+     * Validate and decode a JWT token
+     */
+    public function validateToken(string $token): ?object
+    {
+        try {
+            $decoded = JWT::decode($token, new Key($this->secret, $this->algo));
+
+            // Verify token exists in database and hasn't been revoked
+            $user = User::where('id', $decoded->sub)
+                ->where('jwt_token', $token)
+                ->first();
+
+            if (!$user || !$user->jwt_expires_at || $user->jwt_expires_at->isPast()) {
+                return null;
+            }
+
+            return $decoded;
+        } catch (Exception $e) {
+            return null;
+        }
+    }
+
+    /**
+     * Get user from JWT token
+     */
+    public function getUserFromToken(string $token): ?User
+    {
+        $decoded = $this->validateToken($token);
+
+        if (!$decoded) {
+            return null;
+        }
+
+        return User::find($decoded->sub);
+    }
+
+    /**
+     * Revoke a token (logout)
+     */
+    public function revokeToken(User $user): void
+    {
+        $user->update([
+            'jwt_token' => null,
+            'jwt_expires_at' => null,
+        ]);
+    }
+
+    /**
+     * Refresh an existing token
+     */
+    public function refreshToken(string $token): ?string
+    {
+        $user = $this->getUserFromToken($token);
+
+        if (!$user) {
+            return null;
+        }
+
+        return $this->generateToken($user);
+    }
+}

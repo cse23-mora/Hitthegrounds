@@ -20,10 +20,10 @@
           tabindex="0"
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow border border-base-300">
           <li><a href="/" class="text-primary">Home</a></li>
-          <li><a href="/registration" class="text-base-content">Registrations</a></li>
-          <li><a href="/timeline" class="text-base-content">Timeline</a></li>
-          <li><a href="/awards" class="text-base-content">Awards</a></li>
-          <li><a href="/partners" class="text-base-content">Partners</a></li>
+          <li><a href="{{ route('register') }}" class="text-base-content">Registrations</a></li>
+          <li><a href="{{ route('timeline') }}" class="text-base-content">Timeline</a></li>
+          <li><a href="{{ route('awards') }}" class="text-base-content">Awards</a></li>
+          <li><a href="{{ route('partners') }}" class="text-base-content">Partners</a></li>
           <li><a href="#" class="text-base-content">Gallery</a></li>
         </ul>
       </div>
@@ -41,19 +41,19 @@
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 gap-2 xl:gap-4">
         <li><a href="/" class="text-primary">Home</a></li>
-          <li><a href="/registration" class="text-base-content">Registrations</a></li>
-          <li><a href="/timeline" class="text-base-content">Timeline</a></li>
-          <li><a href="/awards" class="text-base-content">Awards</a></li>
-          <li><a href="/partners" class="text-base-content">Partners</a></li>
+          <li><a href="{{ route("register") }}" class="text-base-content">Registrations</a></li>
+          <li><a href="{{ route("timeline") }}" class="text-base-content">Timeline</a></li>
+          <li><a href="{{ route("awards") }}" class="text-base-content">Awards</a></li>
+          <li><a href="{{ route("partners") }}" class="text-base-content">Partners</a></li>
           <li><a href="#" class="text-base-content">Gallery</a></li>
       </ul>
     </div>
 
     <!-- CTA Button -->
     <div class="navbar-end">
-      <button class="btn btn-primary btn-sm sm:btn-md text-xs sm:text-sm md:text-base">
-        <span class="hidden sm:inline">Register Your Team</span>
-        <span class="sm:hidden">Register</span>
-      </button>
+      <a href="{{ route('login') }}" class="btn btn-primary btn-sm sm:btn-md text-xs sm:text-sm md:text-base">
+        <span class="hidden sm:inline">Company Login</span>
+        <span class="sm:hidden">Login</span>
+      </a>
     </div>
   </div>

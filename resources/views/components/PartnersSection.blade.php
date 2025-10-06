@@ -18,10 +18,10 @@
           <div class="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
             <div class="badge badge-primary badge-lg font-['Staatliches'] text-lg px-6 py-4 shadow-lg">Title Partner</div>
           </div>
-          <div class="card bg-gradient-to-br from-primary/10 via-base-200 to-base-200 shadow-2xl border-2 border-primary">
+          <div class="card bg-gradient-to-br from-primary/10 via-base-200 to-base-200 shadow-sm border-2 border-primary">
             <div class="card-body p-8 md:p-12">
               <div class="flex flex-col items-center text-center gap-6">
-                <figure class="bg-white rounded-2xl p-6 shadow-lg">
+                <figure class="bg-white rounded-2xl shadow-lg">
                   <img
                     src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=500&h=250&fit=crop"
                     alt="Title Partner"
@@ -47,13 +47,13 @@
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-warning badge-md font-['Staatliches'] text-base px-4 py-3 shadow-md">Gold Partner</div>
             </div>
-            <div class="card bg-base-200 shadow-xl border-2 border-warning hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="card bg-base-200 shadow-sm border-2 border-warning hover:shadow-md hover:-translate-y-1 transition-all duration-300">
               <div class="card-body p-6 md:p-8">
-                <figure class="bg-white rounded-xl p-4 mb-4">
+                <figure class="bg-white rounded-xl mb-4">
                   <img
                     src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=350&h=175&fit=crop"
                     alt="Gold Partner"
-                    class="h-28 w-full object-contain"
+                    class="h-28 w-full object-cover"
                   />
                 </figure>
                 <div class="text-center space-y-2">
@@ -69,13 +69,13 @@
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-neutral badge-md font-['Staatliches'] text-base px-4 py-3 shadow-md">Silver Partner</div>
             </div>
-            <div class="card bg-base-200 shadow-xl border-2 border-neutral hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="card bg-base-200 shadow-sm border-2 border-neutral hover:shadow-md hover:-translate-y-1 transition-all duration-300">
               <div class="card-body p-6 md:p-8">
-                <figure class="bg-white rounded-xl p-4 mb-4">
+                <figure class="bg-white rounded-xl mb-4">
                   <img
                     src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=350&h=175&fit=crop"
                     alt="Silver Partner"
-                    class="h-28 w-full object-contain"
+                    class="h-28 w-full object-cover"
                   />
                 </figure>
                 <div class="text-center space-y-2">
@@ -94,13 +94,13 @@
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-accent badge-sm font-['Staatliches'] px-3 py-2 shadow-md">Bronze Partner</div>
             </div>
-            <div class="card bg-base-200 shadow-lg border border-accent hover:border-2 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="card bg-base-200 shadow-sm border border-accent hover:border-2 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
               <div class="card-body p-5">
-                <figure class="bg-white rounded-lg p-3 mb-3">
+                <figure class="bg-white rounded-lg mb-3">
                   <img
                     src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=250&h=125&fit=crop"
                     alt="Bronze Partner"
-                    class="h-20 w-full object-contain"
+                    class="h-20 w-full object-cover"
                   />
                 </figure>
                 <div class="text-center space-y-1">
@@ -116,13 +116,13 @@
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-info badge-sm font-['Staatliches'] px-3 py-2 shadow-md">Corporate Sponsor</div>
             </div>
-            <div class="card bg-base-200 shadow-lg border border-info hover:border-2 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="card bg-base-200 shadow-sm border border-info hover:border-2 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
               <div class="card-body p-5">
-                <figure class="bg-white rounded-lg p-3 mb-3">
+                <figure class="bg-white rounded-lg mb-3">
                   <img
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=250&h=125&fit=crop"
                     alt="Corporate Sponsor"
-                    class="h-20 w-full object-contain"
+                    class="h-20 w-full object-cover"
                   />
                 </figure>
                 <div class="text-center space-y-1">
@@ -138,13 +138,13 @@
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-success badge-sm font-['Staatliches'] px-3 py-2 shadow-md">Banner Partner</div>
             </div>
-            <div class="card bg-base-200 shadow-lg border border-success hover:border-2 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="card bg-base-200 shadow-sm border border-success hover:border-2 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
               <div class="card-body p-5">
-                <figure class="bg-white rounded-lg p-3 mb-3">
+                <figure class="bg-white rounded-lg mb-3">
                   <img
                     src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=250&h=125&fit=crop"
                     alt="Banner Partner"
-                    class="h-20 w-full object-contain"
+                    class="h-20 w-full object-cover"
                   />
                 </figure>
                 <div class="text-center space-y-1">

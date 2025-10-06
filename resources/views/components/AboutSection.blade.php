@@ -1,5 +1,4 @@
-<template>
-  <div
+<div
     class="hero min-h-screen relative overflow-hidden bg-cover bg-center bg-no-repeat"
     style="background-image: url('/about-bg.avif');">
     <!-- Overlay -->
@@ -30,11 +29,4 @@
         </div>
       </div>
     </div>
-  </div>
-</template>
-
-<script setup>
-</script>
-
-<style scoped>
-</style>
+</div>
