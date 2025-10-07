@@ -24,7 +24,7 @@
           <li><a href="{{ route('timeline') }}" class="text-base-content">Timeline</a></li>
           <li><a href="{{ route('awards') }}" class="text-base-content">Awards</a></li>
           <li><a href="{{ route('partners') }}" class="text-base-content">Partners</a></li>
-          <li><a href="#" class="text-base-content">Gallery</a></li>
+          <li><a href="{{ route('gallery') }}" class="text-base-content">Gallery</a></li>
         </ul>
       </div>
 
@@ -45,7 +45,7 @@
           <li><a href="{{ route("timeline") }}" class="text-base-content">Timeline</a></li>
           <li><a href="{{ route("awards") }}" class="text-base-content">Awards</a></li>
           <li><a href="{{ route("partners") }}" class="text-base-content">Partners</a></li>
-          <li><a href="#" class="text-base-content">Gallery</a></li>
+          <li><a href="{{ route("gallery") }}" class="text-base-content">Gallery</a></li>
       </ul>
     </div>
 

@@ -20,6 +20,10 @@ Route::get('/timeline', function () {
     return view('timeine');
 })->name('timeline');
 
+Route::get('/gallery', function () {
+    return view('gallery');
+})->name('gallery');
+
 Route::get('/teams/university', function () {
     return view('teams-university');
 })->name('teams.university');
