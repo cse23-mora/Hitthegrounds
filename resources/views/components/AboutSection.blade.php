@@ -7,14 +7,14 @@
     <div class="hero-content flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-32 2xl:gap-56 max-w-7xl z-10 px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-20">
       <!-- Text Content -->
       <div class="w-full lg:flex-1 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight sm:leading-snug md:leading-normal text-base-content">
-          Bridging Excellence in Technology and Sport
-        </h2>
-        <p class="text-xs sm:text-sm md:text-base lg:text-lg font-light leading-relaxed text-justify text-base-content">
-          Hit the Grounds is the annual cricket tournament hosted by the Department of Computer Science and Engineering (CSE), celebrating sportsmanship, teamwork, and university spirit. This exciting event brings together students, faculty, and alumni for a high-energy showcase of skill and team-spirit.
-          <br />
-          Set against the vibrant backdrop of campus life, the tournament encourages friendly competition and connection, featuring teams from different CSE batches as well as teams from the industry. More than a game, it's a celebration of community, talent, and the love of cricket
-        </p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight sm:leading-snug md:leading-normal text-gray-50">
+        Bridging Excellence in Technology and Sport
+      </h2>
+      <p class="text-xs sm:text-sm md:text-base lg:text-lg font-light leading-relaxed text-justify text-gray-50">
+        Hit the Grounds is the annual cricket tournament hosted by the Department of Computer Science and Engineering (CSE), celebrating sportsmanship, teamwork, and university spirit. This exciting event brings together students, faculty, and alumni for a high-energy showcase of skill and team-spirit.
+        <br />
+        Set against the vibrant backdrop of campus life, the tournament encourages friendly competition and connection, featuring teams from different CSE batches as well as teams from the industry. More than a game, it's a celebration of community, talent, and the love of cricket
+      </p>
       </div>
 
       <!-- Image Section -->
