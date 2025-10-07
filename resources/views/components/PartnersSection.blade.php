@@ -3,18 +3,18 @@
     <div class="container mx-auto px-4 sm:px-6 md:px-8">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-16">
-        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-['Jolly_Lodger'] uppercase mb-4">
+        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-['Jolly_Lodger'] uppercase mb-4" data-aos="fade-up" data-aos-duration="1000">
           <span class="text-base-content">Official </span>
           <span class="text-primary">Partners</span>
         </h2>
-        <p class="text-base-content/80 text-base sm:text-lg md:text-xl font-['Poppins'] max-w-3xl mx-auto">
+        <p class="text-base-content/80 text-base sm:text-lg md:text-xl font-['Poppins'] max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1500">
           Meet our official partners for Hit the Ground 2025.
         </p>
       </div>
 
       <div class="max-w-7xl mx-auto space-y-16">
         <!-- Title Partner - Featured Large Card -->
-        <div class="relative">
+        <div class="relative" data-aos="fade-up" data-aos-duration="2000">
           <div class="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
             <div class="badge badge-primary badge-lg font-['Staatliches'] text-lg px-6 py-4 shadow-lg">Title Partner</div>
           </div>
@@ -43,7 +43,7 @@
         <!-- Gold & Silver Partners -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           <!-- Gold Partner -->
-          <div class="relative">
+          <div class="relative" data-aos="fade-right" data-aos-duration="2000">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-warning badge-md font-['Staatliches'] text-base px-4 py-3 shadow-md">Gold Partner</div>
             </div>
@@ -65,7 +65,7 @@
           </div>
 
           <!-- Silver Partner -->
-          <div class="relative">
+          <div class="relative" data-aos="fade-left" data-aos-duration="2000">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-neutral badge-md font-['Staatliches'] text-base px-4 py-3 shadow-md">Silver Partner</div>
             </div>
@@ -90,7 +90,7 @@
         <!-- Bronze, Corporate, and Banner Partners -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <!-- Bronze Partner -->
-          <div class="relative">
+          <div class="relative" data-aos="fade-right" data-aos-duration="2000">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-accent badge-sm font-['Staatliches'] px-3 py-2 shadow-md">Bronze Partner</div>
             </div>
@@ -112,7 +112,7 @@
           </div>
 
           <!-- Corporate Team Sponsorship -->
-          <div class="relative">
+          <div class="relative" data-aos="fade-up" data-aos-duration="2000">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-info badge-sm font-['Staatliches'] px-3 py-2 shadow-md">Corporate Sponsor</div>
             </div>
@@ -134,7 +134,7 @@
           </div>
 
           <!-- Banner Partner -->
-          <div class="relative">
+          <div class="relative" data-aos="fade-left" data-aos-duration="2000">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               <div class="badge badge-success badge-sm font-['Staatliches'] px-3 py-2 shadow-md">Banner Partner</div>
             </div>
