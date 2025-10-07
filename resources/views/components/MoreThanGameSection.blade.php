@@ -1,11 +1,11 @@
 
 <section class="bg-base-200 py-16 md:py-24">
   <div class="container mx-auto px-4">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" data-aos="zoom-in">
       More Than Just a Game
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="300">
       <!-- Elite Competition -->
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">

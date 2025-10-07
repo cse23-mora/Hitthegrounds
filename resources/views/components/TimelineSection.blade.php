@@ -2,7 +2,7 @@
   <section class="bg-base-100 py-12 sm:py-16 md:py-20 lg:py-24">
     <div class="container mx-auto px-4 sm:px-6 md:px-8">
       <!-- Section Header -->
-      <div class="text-center mb-12 md:mb-16">
+      <div class="text-center mb-12 md:mb-16" data-aos="fade-up" data-aos-duration="1000">
         <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-['Jolly_Lodger'] uppercase mb-4">
           <span class="text-base-content">Event </span>
           <span class="text-primary">Timeline</span>
@@ -18,14 +18,14 @@
 
           <!-- Event Announcement -->
           <li>
-            <div class="timeline-middle">
+            <div class="timeline-middle" data-aos="fade-down" data-aos-duration="1000">
               <div class="avatar placeholder">
                 <div class="bg-info text-info-content rounded-full w-12 h-12 shadow-lg">
                   <Icon name="mdi:bullhorn" class="text-2xl" />
                 </div>
               </div>
             </div>
-            <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8">
+            <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8" data-aos="fade-right" data-aos-duration="2000">
               <time class="font-['Staatliches'] text-lg text-info">October 7th, 2025</time>
               <div class="text-xl md:text-2xl font-['Staatliches'] text-base-content mt-2">Event Announcement</div>
               <p class="text-base-content/70 font-['Poppins'] text-sm md:text-base mt-2">
@@ -38,14 +38,14 @@
           <!-- Open Registrations -->
           <li>
             <hr class="bg-info" />
-            <div class="timeline-middle">
+            <div class="timeline-middle" data-aos="fade-down" >
               <div class="avatar placeholder">
                 <div class="bg-success text-success-content rounded-full w-12 h-12 shadow-lg">
                   <Icon name="mdi:clipboard-edit" class="text-2xl" />
                 </div>
               </div>
             </div>
-            <div class="timeline-end md:ml-8 mb-10 md:mb-0">
+            <div class="timeline-end md:ml-8 mb-10 md:mb-0" data-aos="fade-left" data-aos-duration="2000">
               <time class="font-['Staatliches'] text-lg text-success">October 8th, 2025</time>
               <div class="text-xl md:text-2xl font-['Staatliches'] text-base-content mt-2">Open Registrations</div>
               <p class="text-base-content/70 font-['Poppins'] text-sm md:text-base mt-2">
@@ -58,14 +58,14 @@
           <!-- Registration Closing -->
           <li>
             <hr class="bg-success" />
-            <div class="timeline-middle">
+            <div class="timeline-middle" data-aos="fade-up">
               <div class="avatar placeholder">
                 <div class="bg-warning text-warning-content rounded-full w-12 h-12 shadow-lg">
                   <Icon name="mdi:clock-alert" class="text-2xl" />
                 </div>
               </div>
             </div>
-            <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8">
+            <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8" data-aos="fade-right" data-aos-duration="2000">
               <time class="font-['Staatliches'] text-lg text-warning">November 30th, 2025</time>
               <div class="text-xl md:text-2xl font-['Staatliches'] text-base-content mt-2">Registration Closing</div>
               <p class="text-base-content/70 font-['Poppins'] text-sm md:text-base mt-2">
@@ -78,14 +78,14 @@
           <!-- Event Day -->
           <li>
             <hr class="bg-warning" />
-            <div class="timeline-middle">
+            <div class="timeline-middle" data-aos="fade-up">
               <div class="avatar placeholder">
                 <div class="bg-primary text-primary-content rounded-full w-14 h-14 shadow-xl">
                   <Icon name="mdi:trophy-variant" class="text-3xl" />
                 </div>
               </div>
             </div>
-            <div class="timeline-end md:ml-8">
+            <div class="timeline-end md:ml-8" data-aos="fade-left" data-aos-duration="2000">
               <time class="font-['Staatliches'] text-xl text-primary">December 13th, 2025</time>
               <div class="text-2xl md:text-3xl font-['Staatliches'] text-primary mt-2">Event Day</div>
               <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg mt-2 font-semibold">
@@ -98,7 +98,7 @@
       </div>
 
       <!-- Countdown or CTA Card -->
-      <div class="mt-16 max-w-3xl mx-auto">
+      <div class="mt-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1500">
         <div class="card bg-gradient-to-r from-primary/20 to-accent/20 shadow-xl border border-primary">
           <div class="card-body text-center p-8">
             <h3 class="text-2xl md:text-3xl font-['Staatliches'] text-primary mb-4">

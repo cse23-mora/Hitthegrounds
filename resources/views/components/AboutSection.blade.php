@@ -6,7 +6,7 @@
 
     <div class="hero-content flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-32 2xl:gap-56 max-w-7xl z-10 px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-20">
       <!-- Text Content -->
-      <div class="w-full lg:flex-1 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+      <div class="w-full lg:flex-1 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12" data-aos="fade-up" data-aos-duration="1000">
         <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight sm:leading-snug md:leading-normal text-base-content">
           Bridging Excellence in Technology and Sport
         </h2>
@@ -18,13 +18,13 @@
       </div>
 
       <!-- Image Section -->
-      <div class="w-full lg:flex-1 max-w-md lg:max-w-lg xl:max-w-xl aspect-[4/5] relative flex-shrink-0 hidden md:block">
+      <div class="w-full lg:flex-1 max-w-md lg:max-w-lg xl:max-w-xl aspect-[4/5] relative flex-shrink-0 hidden md:block" >
         <!-- Background decorative borders using transforms instead of pixel positioning -->
-        <div class="card w-4/5 h-4/5 top-0 left-0 absolute border-4 border-accent/30"></div>
-        <div class="card w-4/5 h-4/5 bottom-0 right-0 absolute border-4 border-accent"></div>
+        <div class="card w-4/5 h-4/5 top-0 left-0 absolute border-4 border-accent/30 animate-pulse"></div>
+        <div class="card w-4/5 h-4/5 bottom-0 right-0 absolute border-4 border-accent shadow-lg shadow-accent/50 animate-pulse"></div>
 
         <!-- Main logo box -->
-        <div class="card w-4/5 h-4/5 absolute inset-0 m-auto overflow-hidden bg-base-100 bg-cover bg-center bg-no-repeat"
+        <div class="card w-4/5 h-4/5 absolute inset-0 m-auto overflow-hidden bg-base-100 bg-cover bg-center bg-no-repeat" data-aos="flip-right" data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-delay="300"
         style="background-image: url('/logo.avif');">
         </div>
       </div>

@@ -2,7 +2,7 @@
     <x-PartnersSection />
     <section class="bg-base-200 py-12 sm:py-16 md:py-20">
       <div class="container mx-auto px-4 sm:px-6 md:px-8">
-        <div class="card bg-gradient-to-r from-primary/20 to-accent/20 shadow-sm border border-primary max-w-4xl mx-auto">
+        <div class="card bg-gradient-to-r from-primary/20 to-accent/20 shadow-sm border border-primary max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1500">
           <div class="card-body text-center py-8 md:py-12">
             <h2 class="card-title text-3xl sm:text-4xl md:text-5xl font-['Staatliches'] text-primary justify-center mb-4">
               Become a Partner
