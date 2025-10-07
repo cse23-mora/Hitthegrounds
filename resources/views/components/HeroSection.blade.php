@@ -22,11 +22,11 @@
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-          <button class="btn btn-outline btn-primary btn-sm sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto">
+          <button class="btn btn-neutral btn-md sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto min-h-12">
             <span class="hidden sm:inline">View Tournament Schedule</span>
             <span class="sm:hidden">View Schedule</span>
           </button>
-          <button class="btn btn-primary btn-sm sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto">
+          <button class="btn btn-primary btn-md sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto min-h-12">
             Register
           </button>
         </div>
@@ -35,15 +35,15 @@
       <!-- Stats section -->
       <div class="stats stats-vertical sm:stats-horizontal shadow-xl bg-base-100/10 backdrop-blur-sm w-full sm:w-auto lg:min-w-2xl">
         <div class="stat place-items-center py-4 sm:py-6">
-          <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl" data-count="20">0+</div>
+          <div class="stat-value text-white font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl" data-count="20">0+</div>
           <div class="stat-title text-white dark:text-base-content font-['Poppins'] text-sm sm:text-base">Teams</div>
         </div>
         <div class="stat place-items-center py-4 sm:py-6">
-          <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl" data-count="300">0+</div>
+          <div class="stat-value text-white font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl" data-count="300">0+</div>
           <div class="stat-title text-white dark:text-base-content font-['Poppins'] text-sm sm:text-base">Participants</div>
         </div>
         <div class="stat place-items-center py-4 sm:py-6">
-          <div class="stat-value text-primary font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl" data-count="100">0%</div>
+          <div class="stat-value text-white font-['Staatliches'] text-4xl sm:text-5xl lg:text-6xl" data-count="100">0%</div>
           <div class="stat-title text-white dark:text-base-content font-['Poppins'] text-sm sm:text-base">Entertainment</div>
         </div>
       </div>

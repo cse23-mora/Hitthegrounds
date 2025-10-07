@@ -5,10 +5,10 @@
         Industry Teams
       </h1>
       <p class="text-center text-lg md:text-xl mb-12 max-w-3xl mx-auto">
-        Top corporate cricket teams bringing professional experience to the field.
+        No team Rgegistered yet. 
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      {{-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         <!-- Team Card Template - Add more as needed -->
         <div class="card bg-base-200 shadow-sm border-base-300 border-1">
           <div class="card-body">
@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </section>
 </x-layouts.public>

@@ -29,11 +29,12 @@
       </div>
 
       <!-- Logo -->
-      <a class="btn btn-ghost text-sm sm:text-lg md:text-xl lg:text-2xl font-black normal-case px-2 sm:px-4">
-        <span class="text-base-content">HIT </span>
-        <span class="text-primary">THE </span>
-        <span class="text-base-content hidden sm:inline">GROUNDS</span>
-        <span class="text-base-content sm:hidden">G</span>
+      <a class="btn btn-ghost text-sm sm:text-lg md:text-xl lg:text-2xl font-black normal-case px-1 sm:px-4">
+        <span class="text-base-content">HIT</span>
+        <span class="text-primary ml-1">THE</span>
+     
+        <span class="text-base-content ml-1 xs:hidden sm:inline">GROUNDS</span>
+    
       </a>
     </div>
 
