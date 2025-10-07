@@ -1,26 +1,7 @@
 <x-layouts.public>
     <!-- 3D Rotating Gallery CSS -->
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-        :root {
-            --head-font: "Teko";
-            --body-font: "Poppins";
-            --white: #ffffff;
-            --white04: rgba(255, 255, 255, 0.04);
-            --black: #000000;
-            --hover: darkorange;
-            --yellow: #eaf259;
-            --gold: #ecbd22;
-            --blue: #2faee8;
-            --green: #23fa7d;
-            --pink: #f629cb;
-            --purple: #b520ff;
-        }
-
         .animated-3d-gallery-sec {
-            background-color: #1b1b1b;
             padding-top: 80px;
             padding-bottom: 8px;
         }
@@ -31,9 +12,7 @@
         }
 
         .gallery-title h1 {
-            font-family: var(--head-font);
             font-size: 48px;
-            color: #fff;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -111,51 +90,34 @@
         }
     </style>
 
-    <section class="animated-3d-gallery-sec">
-        <div class="">
-          
-            
+    <section class="animated-3d-gallery-sec relative">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/hero.avif'); z-index: 0;"></div>
+        <div class="backdrop-blur-md h-full w-full">
             <div class="anim-3d-gallery-wrapper">
                   <div class="gallery-title">
                 <h1>Hit the Ground Memories</h1>
             </div>
-                <div class="anim-3d-gallery-wrap" style="--qty: 12">
-                    <div class="anim-3d-gallery-card" style="--position: 1">
-                        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Match">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 2">
-                        <img src="https://plus.unsplash.com/premium_photo-1685056533706-5af828d13dc3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Action">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 3">
-                        <img src="https://images.unsplash.com/photo-1570498839593-e565b39455fc?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Stadium">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 4">
-                        <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Team">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 5">
-                        <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Victory">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 6">
-                        <img src="https://images.unsplash.com/photo-1603291697926-7e5822ed1ac5?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Celebration">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 7">
-                        <img src="https://plus.unsplash.com/premium_photo-1684888759266-ce3768052c80?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Tournament">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 8">
-                        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Championship">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 9">
-                        <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Ground">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 10">
-                        <img src="https://images.unsplash.com/photo-1552318965-6e6be7484ada?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Players">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 11">
-                        <img src="https://plus.unsplash.com/premium_photo-1685231505268-c8f27c4e8870?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Memories">
-                    </div>
-                    <div class="anim-3d-gallery-card" style="--position: 12">
-                        <img src="https://images.unsplash.com/photo-1516567727245-ad8c68f3ec93?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cricket Awards">
-                    </div>
+                @php
+                    $galleryPath = public_path('storage/gallery');
+                    $images = [];
+
+                    if (is_dir($galleryPath)) {
+                        $files = glob($galleryPath . '/*.avif');
+                        sort($files, SORT_NATURAL);
+                        $images = array_map(function($file) {
+                            return basename($file);
+                        }, $files);
+                    }
+
+                    $imageCount = count($images);
+                @endphp
+
+                <div class="anim-3d-gallery-wrap" style="--qty: {{ $imageCount }}">
+                    @foreach($images as $index => $image)
+                        <div class="anim-3d-gallery-card" style="--position: {{ $index + 1 }}">
+                            <img src="{{ asset('storage/gallery/' . $image) }}" alt="Gallery Image {{ $index + 1 }}">
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
