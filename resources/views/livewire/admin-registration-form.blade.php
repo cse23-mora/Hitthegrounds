@@ -84,102 +84,65 @@ new class extends Component {
     }
 }; ?>
 
-<div>
+<div class="flex flex-col gap-6">
     @if (!$showVerification)
-        <!-- Registration Form -->
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <form wire:submit="register" class="space-y-4">
-                    <!-- Name -->
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Full Name</span>
-                        </label>
-                        <input
-                            type="text"
-                            wire:model="name"
-                            class="input input-bordered w-full @error('name') input-error @enderror"
-                            placeholder="Enter your full name"
-                            required
-                        />
-                        @error('name')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+        <form wire:submit="register" class="flex flex-col gap-6">
+            <x-mary-input
+                wire:model="name"
+                label="{{ __('Full Name') }}"
+                type="text"
+                required
+                autofocus
+                placeholder="Enter your full name"
+            />
 
-                    <!-- Email -->
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Email</span>
-                        </label>
-                        <input
-                            type="email"
-                            wire:model="email"
-                            class="input input-bordered w-full @error('email') input-error @enderror"
-                            placeholder="admin@example.com"
-                            required
-                        />
-                        @error('email')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+            <x-mary-input
+                wire:model="email"
+                label="{{ __('Email') }}"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="admin@example.com"
+            />
 
-                    <!-- Submit Button -->
-                    <div class="form-control mt-6">
-                        <button type="submit" class="btn btn-primary w-full">
-                            Register as Admin
-                        </button>
-                    </div>
-                </form>
+            <div class="flex items-center justify-end">
+                <x-mary-button type="submit" class="btn-primary w-full">
+                    {{ __('Register as Admin') }}
+                </x-mary-button>
             </div>
-        </div>
+        </form>
     @else
         <!-- Verification Form -->
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <h3 class="card-title text-center justify-center">Verify Your Email</h3>
-                <p class="text-center text-base-content/70 mb-4">
-                    We've sent a 6-digit verification code to {{ $email }}
-                </p>
+        <div class="text-center">
+            <h1 class="text-2xl font-bold text-primary">{{ __('Verify Your Email') }}</h1>
+            <p class="mt-1 text-sm text-base-content/70">
+                {{ __("We've sent a 6-digit verification code to") }} {{ $email }}
+            </p>
+        </div>
 
-                <form wire:submit="verify" class="space-y-4">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Verification Code</span>
-                        </label>
-                        <input
-                            type="text"
-                            wire:model="verification_code"
-                            class="input input-bordered w-full text-center text-2xl tracking-widest @error('verification_code') input-error @enderror"
-                            placeholder="000000"
-                            maxlength="6"
-                            required
-                            autofocus
-                        />
-                        @error('verification_code')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+        <form wire:submit="verify" class="flex flex-col gap-6">
+            <x-mary-input
+                wire:model="verification_code"
+                label="{{ __('Verification Code') }}"
+                type="text"
+                required
+                autofocus
+                placeholder="000000"
+                maxlength="6"
+                class="text-center text-2xl tracking-widest"
+            />
 
-                    <div class="form-control mt-6">
-                        <button type="submit" class="btn btn-primary w-full">
-                            Verify & Continue
-                        </button>
-                    </div>
-                </form>
-
-                <div class="text-center mt-4">
-                    <p class="text-sm text-base-content/70">
-                        Code expires in 15 minutes
-                    </p>
-                </div>
+            <div class="flex items-center justify-end">
+                <x-mary-button type="submit" class="btn-primary w-full">
+                    {{ __('Verify & Continue') }}
+                </x-mary-button>
             </div>
+        </form>
+
+        <div class="text-center">
+            <p class="text-sm text-base-content/70">
+                {{ __('Code expires in 15 minutes') }}
+            </p>
         </div>
     @endif
 </div>

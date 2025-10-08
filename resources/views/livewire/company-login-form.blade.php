@@ -89,97 +89,68 @@ new class extends Component {
     }
 }; ?>
 
-<div>
+<div class="flex flex-col gap-6">
     @if (!$showVerification)
-        <!-- Email Input Form -->
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <form wire:submit="sendCode" class="space-y-4">
-                    <!-- Contact Email -->
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Email Address</span>
-                        </label>
-                        <input
-                            type="email"
-                            wire:model="contact_email"
-                            class="input input-bordered w-full @error('contact_email') input-error @enderror"
-                            placeholder="contact@company.com"
-                            required
-                            autofocus
-                        />
-                        @error('contact_email')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+        <form wire:submit="sendCode" class="flex flex-col gap-6">
+            <x-mary-input
+                wire:model="contact_email"
+                label="{{ __('Email Address') }}"
+                type="email"
+                required
+                autofocus
+                autocomplete="email"
+                placeholder="contact@company.com"
+            />
 
-                    <!-- Submit Button -->
-                    <div class="form-control mt-6">
-                        <button type="submit" class="btn btn-primary w-full">
-                            Send Verification Code
-                        </button>
-                    </div>
-                </form>
-
-                <div class="text-center mt-4">
-                    <p class="text-sm text-base-content/70">
-                        Don't have an account?
-                        <a href="{{ route('register') }}" class="link link-primary">Register here</a>
-                    </p>
-                </div>
+            <div class="flex items-center justify-end">
+                <x-mary-button type="submit" class="btn-primary w-full">
+                    {{ __('Send Verification Code') }}
+                </x-mary-button>
             </div>
+        </form>
+
+        <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-base-content/70">
+            <span>{{ __("Don't have an account?") }}</span>
+            <a href="{{ route('register') }}" wire:navigate class="link-primary btn-link">
+                {{ __('Register here') }}
+            </a>
         </div>
     @else
         <!-- Verification Form -->
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <h3 class="card-title text-center justify-center">Verify Your Email</h3>
-                <p class="text-center text-base-content/70 mb-4">
-                    We've sent a 6-digit verification code to {{ $contact_email }}
-                </p>
+        <div class="text-center">
+            <h1 class="text-2xl font-bold text-primary">{{ __('Verify Your Email') }}</h1>
+            <p class="mt-1 text-sm text-base-content/70">
+                {{ __("We've sent a 6-digit verification code to") }} {{ $contact_email }}
+            </p>
+        </div>
 
-                <form wire:submit="verify" class="space-y-4">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Verification Code</span>
-                        </label>
-                        <input
-                            type="text"
-                            wire:model="verification_code"
-                            class="input input-bordered w-full text-center text-2xl tracking-widest @error('verification_code') input-error @enderror"
-                            placeholder="000000"
-                            maxlength="6"
-                            required
-                            autofocus
-                        />
-                        @error('verification_code')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+        <form wire:submit="verify" class="flex flex-col gap-6">
+            <x-mary-input
+                wire:model="verification_code"
+                label="{{ __('Verification Code') }}"
+                type="text"
+                required
+                autofocus
+                placeholder="000000"
+                maxlength="6"
+                class="text-center text-2xl tracking-widest"
+            />
 
-                    <div class="form-control mt-6">
-                        <button type="submit" class="btn btn-primary w-full">
-                            Verify & Login
-                        </button>
-                    </div>
+            <div class="flex flex-col gap-3">
+                <x-mary-button type="submit" class="btn-primary w-full">
+                    {{ __('Verify & Login') }}
+                </x-mary-button>
 
-                    <div class="form-control">
-                        <button type="button" wire:click="back" class="btn btn-ghost w-full">
-                            Back to Email
-                        </button>
-                    </div>
-                </form>
-
-                <div class="text-center mt-4">
-                    <p class="text-sm text-base-content/70">
-                        Code expires in 15 minutes
-                    </p>
-                </div>
+                <x-mary-button type="button" wire:click="back" class="btn-ghost w-full">
+                    {{ __('Back to Email') }}
+                </x-mary-button>
             </div>
+        </form>
+
+        <div class="text-center">
+            <p class="text-sm text-base-content/70">
+                {{ __('Code expires in 15 minutes') }}
+            </p>
         </div>
     @endif
 </div>
