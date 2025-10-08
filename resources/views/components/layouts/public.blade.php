@@ -5,7 +5,7 @@
     @include('partials.head')
 </head>
 
-<body class="min-h-screen bg-base-100 text-base-content font-sans antialiased">
+<body class="min-h-screen bg-base-100 text-base-content font-['Poppins'] antialiased">
     <!-- Navigation Header -->
     <x-Navbar />
 
