@@ -19,12 +19,13 @@
         <ul
           tabindex="0"
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow border border-base-300">
-          <li><a href="/" class="text-primary">Home</a></li>
-          <li><a href="{{ route('register') }}" class="text-base-content">Registrations</a></li>
-          <li><a href="{{ route('timeline') }}" class="text-base-content">Timeline</a></li>
-          <li><a href="{{ route('awards') }}" class="text-base-content">Awards</a></li>
-          <li><a href="{{ route('partners') }}" class="text-base-content">Partners</a></li>
-          <li><a href="{{ route('gallery') }}" class="text-base-content">Gallery</a></li>
+          <li><a href="/" class="{{ request()->routeIs('home') ? 'active text-primary' : 'text-base-content' }}">Home</a></li>
+          <li><a href="{{ route('register') }}" class="{{ request()->routeIs('register') ? 'active text-primary' : 'text-base-content' }}">Registrations</a></li>
+          <li><a href="{{ route('timeline') }}" class="{{ request()->routeIs('timeline') ? 'active text-primary' : 'text-base-content' }}">Timeline</a></li>
+          <li><a href="{{ route('awards') }}" class="{{ request()->routeIs('awards') ? 'active text-primary' : 'text-base-content' }}">Awards</a></li>
+          <li><a href="{{ route('partners') }}" class="{{ request()->routeIs('partners') ? 'active text-primary' : 'text-base-content' }}">Partners</a></li>
+          <li><a href="{{ route('gallery') }}" class="{{ request()->routeIs('gallery') ? 'active text-primary' : 'text-base-content' }}">Gallery</a></li>
+          <li><a href="{{ route('support') }}" class="{{ request()->routeIs('support') ? 'active text-primary' : 'text-base-content' }}">Support</a></li>
         </ul>
       </div>
 
@@ -41,12 +42,13 @@
     <!-- Desktop Menu -->
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 gap-2 xl:gap-4">
-        <li><a href="/" class="text-primary">Home</a></li>
-          <li><a href="{{ route("register") }}" class="text-base-content">Registrations</a></li>
-          <li><a href="{{ route("timeline") }}" class="text-base-content">Timeline</a></li>
-          <li><a href="{{ route("awards") }}" class="text-base-content">Awards</a></li>
-          <li><a href="{{ route("partners") }}" class="text-base-content">Partners</a></li>
-          <li><a href="{{ route("gallery") }}" class="text-base-content">Gallery</a></li>
+        <li><a href="/" class="{{ request()->routeIs('home') ? 'active text-primary' : 'text-base-content' }}">Home</a></li>
+          <li><a href="{{ route("register") }}" class="{{ request()->routeIs('register') ? 'active text-primary' : 'text-base-content' }}">Registrations</a></li>
+          <li><a href="{{ route("timeline") }}" class="{{ request()->routeIs('timeline') ? 'active text-primary' : 'text-base-content' }}">Timeline</a></li>
+          <li><a href="{{ route("awards") }}" class="{{ request()->routeIs('awards') ? 'active text-primary' : 'text-base-content' }}">Awards</a></li>
+          <li><a href="{{ route("partners") }}" class="{{ request()->routeIs('partners') ? 'active text-primary' : 'text-base-content' }}">Partners</a></li>
+          <li><a href="{{ route("gallery") }}" class="{{ request()->routeIs('gallery') ? 'active text-primary' : 'text-base-content' }}">Gallery</a></li>
+          <li><a href="{{ route("support") }}" class="{{ request()->routeIs('support') ? 'active text-primary' : 'text-base-content' }}">Support</a></li>
       </ul>
     </div>
 

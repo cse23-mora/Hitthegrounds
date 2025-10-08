@@ -24,6 +24,10 @@ Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
 
+Route::get('/support', function () {
+    return view('support');
+})->name('support');
+
 Route::get('/teams/university', function () {
     return view('teams-university');
 })->name('teams.university');

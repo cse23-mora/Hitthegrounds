@@ -8,10 +8,8 @@
             <!-- Quick Stats Card -->
             <div class="card bg-base-100 shadow-lg border border-base-300">
               <div class="card-body text-center">
-                <div class="avatar placeholder mb-4">
-                  <div class="bg-primary text-primary-content rounded-full w-16 h-16">
-                    <Icon name="mdi:calendar-clock" class="text-3xl" />
-                  </div>
+                <div class="bg-primary text-primary-content rounded-full w-16 h-16 shadow-lg flex items-center justify-center mx-auto mb-4">
+                  <x-mary-icon name="s-calendar" class="w-8 h-8" />
                 </div>
                 <h3 class="text-xl font-['Staatliches'] text-base-content mb-2">Tournament Duration</h3>
                 <p class="text-primary text-3xl font-['Staatliches']">1 Day</p>
@@ -22,10 +20,8 @@
             <!-- Registration Period Card -->
             <div class="card bg-base-100 shadow-lg border border-base-300">
               <div class="card-body text-center">
-                <div class="avatar placeholder mb-4">
-                  <div class="bg-success text-success-content rounded-full w-16 h-16">
-                    <Icon name="mdi:account-group" class="text-3xl" />
-                  </div>
+                <div class="bg-success text-success-content rounded-full w-16 h-16 shadow-lg flex items-center justify-center mx-auto mb-4">
+                  <x-mary-icon name="s-user-group" class="w-8 h-8" />
                 </div>
                 <h3 class="text-xl font-['Staatliches'] text-base-content mb-2">Registration Period</h3>
                 <p class="text-success text-3xl font-['Staatliches']">54 Days</p>
@@ -36,10 +32,8 @@
             <!-- Preparation Time Card -->
             <div class="card bg-base-100 shadow-lg border border-base-300">
               <div class="card-body text-center">
-                <div class="avatar placeholder mb-4">
-                  <div class="bg-warning text-warning-content rounded-full w-16 h-16">
-                    <Icon name="mdi:dumbbell" class="text-3xl" />
-                  </div>
+                <div class="bg-warning text-warning-content rounded-full w-16 h-16 shadow-lg flex items-center justify-center mx-auto mb-4">
+                  <x-mary-icon name="s-rocket-launch" class="w-8 h-8" />
                 </div>
                 <h3 class="text-xl font-['Staatliches'] text-base-content mb-2">Preparation Time</h3>
                 <p class="text-warning text-3xl font-['Staatliches']">13 Days</p>
