@@ -26,9 +26,7 @@
             <span class="hidden sm:inline">View Tournament Schedule</span>
             <span class="sm:hidden">View Schedule</span>
           </button>
-          <button class="btn btn-primary btn-md sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto min-h-12">
-            Register
-          </button>
+          <x-mary-button label="Register" link="{{ route('register') }}" class="btn btn-primary btn-md sm:btn-md lg:btn-lg" />
         </div>
       </div>
 

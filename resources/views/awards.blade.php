@@ -1,5 +1,5 @@
 <x-layouts.public>
-        <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="py-12 sm:py-16 md:py-20 lg:py-24">
       <div class="container mx-auto px-4 sm:px-6 md:px-8">
         <div class="max-w-4xl mx-auto text-center">
@@ -15,87 +15,86 @@
       </div>
     </section>
 
-    <!-- Awards Cards Section -->
+    <!-- Awards Section -->
     <section class="bg-base-100 py-12 sm:py-16 md:py-20">
       <div class="container mx-auto px-4 sm:px-6 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto space-y-20">
 
-          <!-- Champions Award -->
-          <div class="card bg-base-200 shadow-sm border-base-300 border-1 border border-base-300 hover:border-primary " data-aos="fade-down-right" data-aos-duration="2000">
-            <div class="card-body">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="avatar placeholder">
-                  <div class="bg-primary text-primary-content rounded-full w-16 h-16">
-                    <Icon name="mdi:trophy" class="text-3xl" />
-                  </div>
-                </div>
-                <h2 class="card-title text-2xl md:text-3xl font-['Staatliches'] text-primary">Champions</h2>
+          <!-- Champions & Runner-up Section -->
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-['Staatliches'] text-center mb-8">
+              <span class="text-primary">Champions & </span>
+              <span class="text-base-content">Runner-up</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div class="flex justify-center" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="/award/award_1.avif" alt="Champions Trophy" class="w-full max-w-md object-contain">
               </div>
-              <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg">
-                Awarded to the tournament-winning team
-              </p>
-              <div class="card-actions justify-end mt-4">
-                <div class="badge badge-primary badge-outline">Team Award</div>
+              <div class="text-center md:text-left" data-aos="fade-left" data-aos-duration="1200">
+                <div class="badge badge-primary badge-lg mb-4">Team Award</div>
+                <h3 class="text-2xl sm:text-3xl font-['Staatliches'] text-primary mb-4">Tournament Champions</h3>
+                <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg leading-relaxed mb-4">
+                  The ultimate prize for the team that demonstrates exceptional skill, teamwork, and determination throughout the tournament. Only the best will lift this prestigious trophy.
+                </p>
+                <div class="badge badge-accent badge-lg">Runner-up Awards</div>
+                <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg leading-relaxed mt-4">
+                  Recognition for teams with outstanding performances, awarded to the 2nd and 3rd place finishers.
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- Runners-up Award -->
-          <div class="card bg-base-200 shadow-sm border-base-300 border-1 border border-base-300 hover:border-primary " data-aos="fade-down-left" data-aos-duration="2000">
-            <div class="card-body">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="avatar placeholder">
-                  <div class="bg-accent text-accent-content rounded-full w-16 h-16">
-                    <Icon name="mdi:medal" class="text-3xl" />
-                  </div>
+          <div class="divider"></div>
+
+          <!-- Player of the Tournament Section -->
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-['Staatliches'] text-center mb-8">
+              <span class="text-base-content">Player of the </span>
+              <span class="text-warning">Tournament</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div class="text-center md:text-left order-2 md:order-1" data-aos="fade-right" data-aos-duration="1200">
+                <div class="badge badge-warning badge-lg mb-4">Individual Award</div>
+                <h3 class="text-2xl sm:text-3xl font-['Staatliches'] text-warning mb-4">Most Valuable Player</h3>
+                <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg leading-relaxed">
+                  Awarded to the most outstanding individual performer across all matches. This prestigious award recognizes the player who consistently delivers exceptional performances, demonstrating skill, leadership, and sportsmanship.
+                </p>
+                <div class="mt-6 space-y-2">
+                  <p class="text-base-content/70 font-['Poppins'] text-sm md:text-base">
+                    <span class="font-semibold">Criteria:</span> Batting, bowling, fielding excellence, and match-winning contributions
+                  </p>
                 </div>
-                <h2 class="card-title text-2xl md:text-3xl font-['Staatliches'] text-accent">Runners-up</h2>
               </div>
-              <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg">
-                Awarded to the teams with the 2nd and 3rd highest scores
-              </p>
-              <div class="card-actions justify-end mt-4">
-                <div class="badge badge-accent badge-outline">Team Awards</div>
+              <div class="flex justify-center order-1 md:order-2" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="/award/award_2.avif" alt="Player of the Tournament Trophy" class="w-full max-w-md object-contain">
               </div>
             </div>
           </div>
 
-          <!-- Player of the Tournament -->
-          <div class="card bg-base-200 shadow-sm border-base-300 border-1 border border-base-300 hover:border-primary " data-aos="fade-up-right" data-aos-duration="2000">
-            <div class="card-body">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="avatar placeholder">
-                  <div class="bg-warning text-warning-content rounded-full w-16 h-16">
-                    <Icon name="mdi:star-circle" class="text-3xl" />
-                  </div>
-                </div>
-                <h2 class="card-title text-2xl md:text-3xl font-['Staatliches'] text-warning">Player of the Tournament</h2>
-              </div>
-              <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg">
-                The most outstanding player across all matches
-              </p>
-              <div class="card-actions justify-end mt-4">
-                <div class="badge badge-warning badge-outline">Individual Award</div>
-              </div>
-            </div>
-          </div>
+          <div class="divider"></div>
 
-          <!-- Best Performing Players -->
-          <div class="card bg-base-200 shadow-sm border-base-300 border-1 border border-base-300 hover:border-primary " data-aos="fade-up-left" data-aos-duration="2000">
-            <div class="card-body">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="avatar placeholder">
-                  <div class="bg-success text-success-content rounded-full w-16 h-16">
-                    <Icon name="mdi:account-star" class="text-3xl" />
-                  </div>
-                </div>
-                <h2 class="card-title text-2xl md:text-3xl font-['Staatliches'] text-success">Best Performing Players</h2>
+          <!-- Best Performing Players Section -->
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-['Staatliches'] text-center mb-8">
+              <span class="text-base-content">Best Performing </span>
+              <span class="text-success">Players</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div class="flex justify-center" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="/award/award_3.avif" alt="Best Performing Players Trophy" class="w-full max-w-md object-contain">
               </div>
-              <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg">
-                Recognizing excellent individual performances
-              </p>
-              <div class="card-actions justify-end mt-4">
-                <div class="badge badge-success badge-outline">Individual Awards</div>
+              <div class="text-center md:text-left" data-aos="fade-left" data-aos-duration="1200">
+                <div class="badge badge-success badge-lg mb-4">Individual Awards</div>
+                <h3 class="text-2xl sm:text-3xl font-['Staatliches'] text-success mb-4">Excellence Recognition</h3>
+                <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg leading-relaxed mb-6">
+                  Celebrating individual excellence across various categories. These awards recognize players who shine in specific aspects of the game.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div class="badge badge-success badge-outline w-full py-3">Best Batsman</div>
+                  <div class="badge badge-success badge-outline w-full py-3">Best Bowler</div>
+                  <div class="badge badge-success badge-outline w-full py-3">Best Fielder</div>
+                  <div class="badge badge-success badge-outline w-full py-3">Best All-Rounder</div>
+                </div>
               </div>
             </div>
           </div>
@@ -116,12 +115,10 @@
               Register your team now and compete for these prestigious awards!
             </p>
             <div class="card-actions justify-center">
-              <button class="btn btn-primary btn-lg font-['Poppins']">
-                Register Your Team
-              </button>
+              <x-mary-button link="{{ route('register') }}" label="Register Your Team" class="btn btn-primary btn-lg font-['Poppins']" />
             </div>
           </div>
         </div>
       </div>
     </section>
-    </x-layouts.public>
+</x-layouts.public>

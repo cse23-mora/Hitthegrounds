@@ -95,147 +95,80 @@ new class extends Component {
     }
 }; ?>
 
-<div>
+<div class="flex flex-col gap-6">
     @if (!$showVerification)
-        <!-- Registration Form -->
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <form wire:submit="register" class="space-y-4">
-                    <!-- Company Name -->
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Company Name</span>
-                        </label>
-                        <input
-                            type="text"
-                            wire:model="company_name"
-                            class="input input-bordered w-full @error('company_name') input-error @enderror"
-                            placeholder="Enter company name"
-                            required
-                        />
-                        @error('company_name')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+        <form wire:submit="register" class="flex flex-col gap-6">
+            <x-mary-input
+                wire:model="company_name"
+                label="{{ __('Company Name') }}"
+                type="text"
+                required
+                autofocus
+                placeholder="Enter company name"
+            />
 
-                    <!-- Contact Person Name -->
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Contact Person Name</span>
-                        </label>
-                        <input
-                            type="text"
-                            wire:model="contact_person_name"
-                            class="input input-bordered w-full @error('contact_person_name') input-error @enderror"
-                            placeholder="Enter contact person name"
-                            required
-                        />
-                        @error('contact_person_name')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+            <x-mary-input
+                wire:model="contact_person_name"
+                label="{{ __('Contact Person Name') }}"
+                type="text"
+                required
+                placeholder="Enter contact person name"
+            />
 
-                    <!-- Contact Email -->
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Contact Email</span>
-                        </label>
-                        <input
-                            type="email"
-                            wire:model="contact_email"
-                            class="input input-bordered w-full @error('contact_email') input-error @enderror"
-                            placeholder="contact@company.com"
-                            required
-                        />
-                        @error('contact_email')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+            <x-mary-input
+                wire:model="contact_email"
+                label="{{ __('Contact Email') }}"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="contact@company.com"
+            />
 
-                    <!-- Contact Person Phone -->
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Contact Person Phone</span>
-                        </label>
-                        <input
-                            type="tel"
-                            wire:model="contact_person_phone"
-                            class="input input-bordered w-full @error('contact_person_phone') input-error @enderror"
-                            placeholder="+1 (555) 123-4567"
-                            required
-                        />
-                        @error('contact_person_phone')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
+            <x-mary-input
+                wire:model="contact_person_phone"
+                label="{{ __('Contact Person Phone') }}"
+                type="tel"
+                required
+                placeholder="+1 (555) 123-4567"
+            />
 
-                    <!-- Submit Button -->
-                    <div class="form-control mt-6">
-                        <button type="submit" class="btn btn-primary w-full">
-                            Register
-                        </button>
-                    </div>
-                </form>
-
-                <div class="text-center mt-4">
-                    <p class="text-sm text-base-content/70">
-                        Already have an account?
-                        <a href="{{ route('login') }}" class="link link-primary">Login here</a>
-                    </p>
-                </div>
+            <div class="flex items-center justify-end">
+                <x-mary-button type="submit" class="btn-primary w-full">
+                    {{ __('Register') }}
+                </x-mary-button>
             </div>
+        </form>
+
+        <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-base-content/70">
+            <span>{{ __('Already have an account?') }}</span>
+            <a href="{{ route('login') }}" wire:navigate class="link-primary btn-link">
+                {{ __('Login here') }}
+            </a>
         </div>
     @else
-        <!-- Verification Form -->
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <h3 class="card-title text-center justify-center">Verify Your Email</h3>
-                <p class="text-center text-base-content/70 mb-4">
-                    We've sent a 6-digit verification code to {{ $contact_email }}
-                </p>
+        <form wire:submit="verify" class="flex flex-col gap-6">
+            <x-mary-input
+                wire:model="verification_code"
+                label="{{ __('Verification Code') }}"
+                type="text"
+                required
+                autofocus
+                placeholder="000000"
+                maxlength="6"
+                class="text-center text-2xl tracking-widest"
+            />
 
-                <form wire:submit="verify" class="space-y-4">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text font-medium">Verification Code</span>
-                        </label>
-                        <input
-                            type="text"
-                            wire:model="verification_code"
-                            class="input input-bordered w-full text-center text-2xl tracking-widest @error('verification_code') input-error @enderror"
-                            placeholder="000000"
-                            maxlength="6"
-                            required
-                            autofocus
-                        />
-                        @error('verification_code')
-                            <label class="label">
-                                <span class="label-text-alt text-error">{{ $message }}</span>
-                            </label>
-                        @enderror
-                    </div>
-
-                    <div class="form-control mt-6">
-                        <button type="submit" class="btn btn-primary w-full">
-                            Verify & Continue
-                        </button>
-                    </div>
-                </form>
-
-                <div class="text-center mt-4">
-                    <p class="text-sm text-base-content/70">
-                        Code expires in 15 minutes
-                    </p>
-                </div>
+            <div class="flex items-center justify-end">
+                <x-mary-button type="submit" class="btn-primary w-full">
+                    {{ __('Verify & Continue') }}
+                </x-mary-button>
             </div>
+        </form>
+
+        <div class="text-center">
+            <p class="text-sm text-base-content/70">
+                {{ __('Code expires in 15 minutes') }}
+            </p>
         </div>
     @endif
 </div>

@@ -86,32 +86,99 @@
                     <div class="card-body">
                         <h2 class="card-title">Team Members ({{ $team->members->count() }}/12)</h2>
 
+                        <!-- Team Composition Progress -->
+                        <div class="mb-4 p-4 bg-base-200 rounded-lg">
+                            <h3 class="font-semibold mb-3">Team Composition</h3>
+
+                            <!-- Progress Bars -->
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Male Players (Required: 6, Max: 9)</span>
+                                        <span class="font-semibold {{ $team->getMaleCount() >= 6 ? 'text-success' : 'text-warning' }}">
+                                            {{ $team->getMaleCount() }}/9
+                                        </span>
+                                    </div>
+                                    <progress
+                                        class="progress {{ $team->getMaleCount() >= 6 ? 'progress-success' : 'progress-warning' }} w-full"
+                                        value="{{ $team->getMaleCount() }}"
+                                        max="9"
+                                    ></progress>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Female Players (Required: 2, Max: 3)</span>
+                                        <span class="font-semibold {{ $team->getFemaleCount() >= 2 ? 'text-success' : 'text-warning' }}">
+                                            {{ $team->getFemaleCount() }}/3
+                                        </span>
+                                    </div>
+                                    <progress
+                                        class="progress {{ $team->getFemaleCount() >= 2 ? 'progress-success' : 'progress-warning' }} w-full"
+                                        value="{{ $team->getFemaleCount() }}"
+                                        max="3"
+                                    ></progress>
+                                </div>
+                            </div>
+
+                            <!-- Validation Status -->
+                            @if($team->members->count() > 0)
+                            <div class="mt-3">
+                                @if($team->isValidConfiguration())
+                                    <div class="alert alert-success">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <span>Team meets all requirements!</span>
+                                    </div>
+                                @elseif($team->meetsMinimumRequirements())
+                                    <div class="alert alert-info">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                        </svg>
+                                        <span>Team meets minimum requirements. Can add {{ 12 - $team->members->count() }} more player(s).</span>
+                                    </div>
+                                @else
+                                    <div class="alert alert-warning">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                        </svg>
+                                        <span>
+                                            Team doesn't meet requirements. Need:
+                                            @if($team->getMaleCount() < 6) {{ 6 - $team->getMaleCount() }} more male player(s) @endif
+                                            @if($team->getFemaleCount() < 2) {{ 2 - $team->getFemaleCount() }} more female player(s) @endif
+                                        </span>
+                                    </div>
+                                @endif
+                            </div>
+                            @endif
+                        </div>
+
+                        <!-- Members Grid -->
                         @if($team->members->count() > 0)
-                            <div class="overflow-x-auto">
-                                <table class="table table-zebra">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Name</th>
-                                            <th>Role</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($team->members as $index => $member)
-                                            <tr>
-                                                <td>{{ $index + 1 }}</td>
-                                                <td class="font-medium">{{ $member->name }}</td>
-                                                <td>
-                                                    @if($member->is_captain)
-                                                        <span class="badge badge-primary badge-sm">Captain</span>
-                                                    @else
-                                                        <span class="badge badge-ghost badge-sm">Member</span>
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                @foreach($team->members as $member)
+                                    <div class="card bg-base-200 shadow-sm">
+                                        <figure class="px-4 pt-4">
+                                            <img
+                                                src="{{ $member->picture ? Storage::url($member->picture) : ($member->gender === 'Female' ? '/placeholder/female.avif' : '/placeholder/male.avif') }}"
+                                                alt="{{ $member->name }}"
+                                                class="rounded-lg h-32 w-32 object-cover"
+                                            />
+                                        </figure>
+                                        <div class="card-body p-4">
+                                            <h3 class="font-semibold text-sm">{{ $member->name }}</h3>
+                                            <p class="text-xs text-base-content/70">{{ $member->gender }}</p>
+                                            <div class="flex gap-1 flex-wrap mt-1">
+                                                @if($member->is_captain)
+                                                    <span class="badge badge-primary badge-xs">Captain</span>
+                                                @else
+                                                    <span class="badge badge-ghost badge-xs">Member</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
                         @else
                             <div class="text-center py-8">

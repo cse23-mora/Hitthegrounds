@@ -19,10 +19,8 @@
           <!-- Event Announcement -->
           <li>
             <div class="timeline-middle" data-aos="fade-down" data-aos-duration="1000">
-              <div class="avatar placeholder">
-                <div class="bg-info text-info-content rounded-full w-12 h-12 shadow-lg">
-                  <Icon name="mdi:bullhorn" class="text-2xl" />
-                </div>
+              <div class="bg-info text-info-content rounded-full w-14 h-14 shadow-lg flex items-center justify-center">
+                <x-mary-icon name="s-calendar" class="w-7 h-7" />
               </div>
             </div>
             <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8" data-aos="fade-right" data-aos-duration="2000">
@@ -39,10 +37,8 @@
           <li>
             <hr class="bg-info" />
             <div class="timeline-middle" data-aos="fade-down" >
-              <div class="avatar placeholder">
-                <div class="bg-success text-success-content rounded-full w-12 h-12 shadow-lg">
-                  <Icon name="mdi:clipboard-edit" class="text-2xl" />
-                </div>
+              <div class="bg-success text-success-content rounded-full w-14 h-14 shadow-lg flex items-center justify-center">
+                <x-mary-icon name="s-clipboard-document-list" class="w-7 h-7" />
               </div>
             </div>
             <div class="timeline-end md:ml-8 mb-10 md:mb-0" data-aos="fade-left" data-aos-duration="2000">
@@ -59,10 +55,8 @@
           <li>
             <hr class="bg-success" />
             <div class="timeline-middle" data-aos="fade-up">
-              <div class="avatar placeholder">
-                <div class="bg-warning text-warning-content rounded-full w-12 h-12 shadow-lg">
-                  <Icon name="mdi:clock-alert" class="text-2xl" />
-                </div>
+              <div class="bg-warning text-warning-content rounded-full w-14 h-14 shadow-lg flex items-center justify-center">
+                <x-mary-icon name="s-clock" class="w-7 h-7" />
               </div>
             </div>
             <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8" data-aos="fade-right" data-aos-duration="2000">
@@ -79,15 +73,13 @@
           <li>
             <hr class="bg-warning" />
             <div class="timeline-middle" data-aos="fade-up">
-              <div class="avatar placeholder">
-                <div class="bg-primary text-primary-content rounded-full w-14 h-14 shadow-xl">
-                  <Icon name="mdi:trophy-variant" class="text-3xl" />
-                </div>
+              <div class="bg-error text-error-content rounded-full w-16 h-16 shadow-xl flex items-center justify-center">
+                <x-mary-icon name="s-trophy" class="w-9 h-9" />
               </div>
             </div>
             <div class="timeline-end md:ml-8" data-aos="fade-left" data-aos-duration="2000">
-              <time class="font-['Staatliches'] text-xl text-primary">December 13th, 2025</time>
-              <div class="text-2xl md:text-3xl font-['Staatliches'] text-primary mt-2">Event Day</div>
+              <time class="font-['Staatliches'] text-xl text-error">December 13th, 2025</time>
+              <div class="text-2xl md:text-3xl font-['Staatliches'] text-error mt-2">Event Day</div>
               <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg mt-2 font-semibold">
                 The big day - Let the games begin! 🏏
               </p>
@@ -108,9 +100,7 @@
               Register your team before November 30th to be part of the most exciting cricket tournament of the year!
             </p>
             <div class="card-actions justify-center">
-              <button class="btn btn-primary btn-lg font-['Poppins']">
-                Register Now
-              </button>
+              <x-mary-button label="Register Now" link="{{ route('register') }}" class="btn btn-primary btn-lg font-['Poppins']" />
             </div>
           </div>
         </div>
