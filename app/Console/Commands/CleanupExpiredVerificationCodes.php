@@ -28,7 +28,7 @@ class CleanupExpiredVerificationCodes extends Command
     {
         $deleted = VerificationCode::where(function ($query) {
             $query->where('expires_at', '<', now())
-                  ->orWhere('is_used', true);
+                ->orWhere('is_used', true);
         })->delete();
 
         $this->info("Deleted {$deleted} expired/used verification codes.");

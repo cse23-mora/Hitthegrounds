@@ -2,11 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\Company;
 use App\Models\User;
 use App\Models\VerificationCode;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Volt\Volt;
@@ -28,10 +26,10 @@ class VerificationCodeSecurityTest extends TestCase
     public function test_verification_codes_are_hashed_in_database(): void
     {
         $user = User::factory()->create(['email' => 'test@example.com']);
-        
+
         $code = '123456';
         $hashedCode = hash('sha256', $code);
-        
+
         VerificationCode::create([
             'user_id' => $user->id,
             'code' => $hashedCode,
@@ -39,7 +37,7 @@ class VerificationCodeSecurityTest extends TestCase
         ]);
 
         $storedCode = VerificationCode::where('user_id', $user->id)->first();
-        
+
         // Verify code is hashed
         $this->assertNotEquals($code, $storedCode->code);
         $this->assertEquals($hashedCode, $storedCode->code);
@@ -64,10 +62,10 @@ class VerificationCodeSecurityTest extends TestCase
     public function test_verify_code_rate_limiting_prevents_brute_force(): void
     {
         $user = User::factory()->create(['email' => 'test@example.com']);
-        
+
         $code = '123456';
         $hashedCode = hash('sha256', $code);
-        
+
         VerificationCode::create([
             'user_id' => $user->id,
             'code' => $hashedCode,
@@ -76,7 +74,7 @@ class VerificationCodeSecurityTest extends TestCase
 
         // Hit the rate limit
         for ($i = 0; $i < 5; $i++) {
-            RateLimiter::hit('verify-code:' . $user->id, 900);
+            RateLimiter::hit('verify-code:'.$user->id, 900);
         }
 
         // Next attempt should be rate limited
@@ -91,10 +89,10 @@ class VerificationCodeSecurityTest extends TestCase
     public function test_expired_codes_cannot_be_used(): void
     {
         $user = User::factory()->create(['email' => 'test@example.com']);
-        
+
         $code = '123456';
         $hashedCode = hash('sha256', $code);
-        
+
         // Create expired code
         VerificationCode::create([
             'user_id' => $user->id,
@@ -113,10 +111,10 @@ class VerificationCodeSecurityTest extends TestCase
     public function test_used_codes_cannot_be_reused(): void
     {
         $user = User::factory()->create(['email' => 'test@example.com']);
-        
+
         $code = '123456';
         $hashedCode = hash('sha256', $code);
-        
+
         // Create used code
         VerificationCode::create([
             'user_id' => $user->id,
@@ -135,7 +133,7 @@ class VerificationCodeSecurityTest extends TestCase
 
     public function test_user_enumeration_is_prevented_with_generic_error(): void
     {
-        // Test with non-existent user  
+        // Test with non-existent user
         Volt::test('company-login-form')
             ->set('contact_email', 'nonexistent@example.com')
             ->call('sendCode')
@@ -162,7 +160,7 @@ class VerificationCodeSecurityTest extends TestCase
     public function test_cleanup_command_removes_expired_codes(): void
     {
         $user = User::factory()->create();
-        
+
         // Create expired code
         $expiredCode = VerificationCode::create([
             'user_id' => $user->id,

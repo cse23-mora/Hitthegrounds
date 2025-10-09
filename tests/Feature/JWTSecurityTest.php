@@ -18,7 +18,7 @@ class JWTSecurityTest extends TestCase
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('JWT_SECRET is not configured');
 
-        new JWTService();
+        new JWTService;
     }
 
     public function test_jwt_secret_must_be_strong_enough(): void
@@ -29,7 +29,7 @@ class JWTSecurityTest extends TestCase
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('JWT_SECRET must be at least 32 bytes');
 
-        new JWTService();
+        new JWTService;
     }
 
     public function test_jwt_token_can_be_generated_and_validated(): void
@@ -38,7 +38,7 @@ class JWTSecurityTest extends TestCase
         config(['app.jwt_secret' => base64_encode(random_bytes(64))]);
 
         $user = User::factory()->create();
-        $jwtService = new JWTService();
+        $jwtService = new JWTService;
 
         $token = $jwtService->generateToken($user);
 
@@ -55,7 +55,7 @@ class JWTSecurityTest extends TestCase
         config(['app.jwt_secret' => base64_encode(random_bytes(64))]);
 
         $user = User::factory()->create();
-        $jwtService = new JWTService();
+        $jwtService = new JWTService;
 
         $token = $jwtService->generateToken($user);
 
@@ -70,7 +70,7 @@ class JWTSecurityTest extends TestCase
         config(['app.jwt_ttl' => 0]); // Set to expire immediately
 
         $user = User::factory()->create();
-        $jwtService = new JWTService();
+        $jwtService = new JWTService;
 
         $token = $jwtService->generateToken($user);
 
@@ -87,7 +87,7 @@ class JWTSecurityTest extends TestCase
         config(['app.jwt_secret' => base64_encode(random_bytes(64))]);
 
         $user = User::factory()->create();
-        $jwtService = new JWTService();
+        $jwtService = new JWTService;
 
         $token = $jwtService->generateToken($user);
 
@@ -104,13 +104,13 @@ class JWTSecurityTest extends TestCase
         config(['app.jwt_secret' => base64_encode(random_bytes(64))]);
 
         $user = User::factory()->create();
-        $jwtService = new JWTService();
+        $jwtService = new JWTService;
 
         $originalToken = $jwtService->generateToken($user);
-        
+
         // Wait a moment to ensure different timestamp
         sleep(1);
-        
+
         $newToken = $jwtService->refreshToken($originalToken);
 
         $this->assertNotNull($newToken);
@@ -118,7 +118,7 @@ class JWTSecurityTest extends TestCase
 
         // Old token should no longer be valid
         $this->assertNull($jwtService->validateToken($originalToken));
-        
+
         // New token should be valid
         $this->assertNotNull($jwtService->validateToken($newToken));
     }
@@ -127,7 +127,7 @@ class JWTSecurityTest extends TestCase
     {
         config(['app.env' => 'production']);
         $this->assertEquals('production', config('app.env'));
-        
+
         config(['app.env' => 'local']);
         $this->assertEquals('local', config('app.env'));
     }
