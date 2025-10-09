@@ -1,15 +1,16 @@
 <x-layouts.company>
     @php
         $user = \App\Helpers\CompanyAuth::user();
+        $maxTeamCount = $user->company->max_team_count ?? 2;
     @endphp
 
     <div class="w-full h-full">
         <div class="flex justify-between items-center mb-6">
             <div>
                 <h1 class="text-3xl font-bold text-base-content">My Teams</h1>
-                <p class="mt-2 text-base-content/70">Manage your tournament teams ({{ $user->teams->count() }}/2)</p>
+                <p class="mt-2 text-base-content/70">Manage your tournament teams ({{ $user->teams->count() }}/{{ $maxTeamCount }})</p>
             </div>
-            @if($user->teams->count() < 2)
+            @if($user->teams->count() < $maxTeamCount)
                 <a href="{{ route('company.teams.create') }}" class="btn btn-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -62,7 +63,7 @@
                     </svg>
                     <h3 class="text-xl font-bold mt-4">No Teams Yet</h3>
                     <p class="text-base-content/70 mt-2">Create your first team to participate in the tournament</p>
-                    <p class="text-sm text-base-content/50 mt-1">You can register up to 2 teams</p>
+                    <p class="text-sm text-base-content/50 mt-1">You can register up to {{ $maxTeamCount }} teams</p>
                     <div class="mt-6">
                         <a href="{{ route('company.teams.create') }}" class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">

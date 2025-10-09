@@ -18,9 +18,13 @@ new class extends Component {
             return;
         }
 
-        // Check team limit
-        if ($user->teams()->count() >= 2) {
-            $this->addError('team_name', 'You can only register up to 2 teams.');
+        // Check team limit based on company's max_team_count
+        $company = $user->company;
+        $currentTeamCount = $user->teams()->count();
+        $maxTeamCount = $company->max_team_count ?? 2;
+
+        if ($currentTeamCount >= $maxTeamCount) {
+            $this->addError('team_name', "You can only register up to {$maxTeamCount} teams.");
             return;
         }
 
