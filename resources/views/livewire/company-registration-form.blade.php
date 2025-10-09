@@ -6,6 +6,8 @@ use App\Models\VerificationCode;
 use App\Notifications\VerificationCodeNotification;
 use App\Services\JWTService;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Validation\ValidationException;
 use Livewire\Volt\Component;
 
 new class extends Component {
@@ -26,6 +28,18 @@ new class extends Component {
             'contact_email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users,email'],
             'contact_person_phone' => ['required', 'string', 'max:20'],
         ]);
+
+        // Rate limiting: max 3 registration attempts per 5 minutes per email
+        $key = 'register:' . strtolower($validated['contact_email']);
+        
+        if (RateLimiter::tooManyAttempts($key, 3)) {
+            $seconds = RateLimiter::availableIn($key);
+            throw ValidationException::withMessages([
+                'contact_email' => "Too many registration attempts. Please try again in {$seconds} seconds.",
+            ]);
+        }
+
+        RateLimiter::hit($key, 300); // 5 minutes
 
         // Create company
         $company = Company::create([
@@ -65,6 +79,16 @@ new class extends Component {
             'verification_code' => ['required', 'string', 'size:6'],
         ]);
 
+        // Rate limiting: max 5 verification attempts per 15 minutes per user
+        $key = 'verify-code:' . $this->userId;
+        
+        if (RateLimiter::tooManyAttempts($key, 5)) {
+            $seconds = RateLimiter::availableIn($key);
+            throw ValidationException::withMessages([
+                'verification_code' => "Too many failed attempts. Please try again in {$seconds} seconds.",
+            ]);
+        }
+
         $verificationCode = VerificationCode::where('user_id', $this->userId)
             ->where('code', $this->verification_code)
             ->where('is_used', false)
@@ -72,9 +96,13 @@ new class extends Component {
             ->first();
 
         if (!$verificationCode) {
+            RateLimiter::hit($key, 900); // 15 minutes
             $this->addError('verification_code', 'Invalid or expired verification code.');
             return;
         }
+        
+        // Clear rate limit on successful verification
+        RateLimiter::clear($key);
 
         // Mark code as used
         $verificationCode->update(['is_used' => true]);
@@ -87,8 +115,9 @@ new class extends Component {
         $jwtService = new JWTService();
         $token = $jwtService->generateToken($user);
 
-        // Store JWT token in cookie (httpOnly, secure)
-        cookie()->queue('company_token', $token, config('app.jwt_ttl'), '/', null, true, true, false, 'strict');
+        // Store JWT token in cookie (httpOnly, secure based on environment)
+        $secure = config('app.env') !== 'local'; // Only use secure in production
+        cookie()->queue('company_token', $token, config('app.jwt_ttl'), '/', null, $secure, true, false, 'strict');
 
         // Redirect to dashboard
         $this->redirect('/company/dashboard', navigate: true);
