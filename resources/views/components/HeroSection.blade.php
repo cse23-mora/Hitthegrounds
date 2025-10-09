@@ -22,10 +22,7 @@
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-          <button class="btn btn-neutral btn-md sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto min-h-12">
-            <span class="hidden sm:inline">View Tournament Schedule</span>
-            <span class="sm:hidden">View Schedule</span>
-          </button>
+          <x-mary-button label="View Timeline" link="{{ route('timeline') }}" class="btn btn-neutral btn-md sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto min-h-12" />
           <x-mary-button label="Register" link="{{ route('register') }}" class="btn btn-primary btn-md sm:btn-md lg:btn-lg" />
         </div>
       </div>

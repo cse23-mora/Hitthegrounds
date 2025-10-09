@@ -1,102 +1,8 @@
 <x-layouts.public>
-    <!-- 3D Rotating Gallery CSS -->
-    <style>
-        .animated-3d-gallery-sec {
-            padding-top: 80px;
-            padding-bottom: 8px;
-        }
-
-        .gallery-title {
-            text-align: center;
-            margin-bottom: 0px;
-        }
-
-        .gallery-title h1 {
-            font-size: 48px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .anim-3d-gallery-wrapper {
-            width: 100%;
-            height: 100vh;
-        
-            overflow: hidden;
-            position: relative;
-        }
-
-        .anim-3d-gallery-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .anim-3d-gallery-wrap {
-            position: absolute;
-            transform-style: preserve-3d;
-            aspect-ratio: 3 / 4;
-            width: 100%;
-            max-width: 12%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%) perspective(22vw) scale(2) rotateY(0);
-            animation: rotation3dcardZoom 60s linear infinite;
-        }
-
-        @keyframes rotation3dcardZoom{
-            0%{
-                transform: translate(-50%,-50%) perspective(22vw) scale(2) rotateY(0);
-            }
-            100%{
-                transform: translate(-50%,-50%) perspective(22vw) scale(2) rotateY(360deg);
-            }
-        }
-
-        .anim-3d-gallery-card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform: rotateY(calc((var(--position) - 1)*(360/var(--qty)) * 1deg)) translateZ(23vw);
-        }
-
-        @media (max-width: 768px) {
-            .gallery-title h1 {
-                font-size: 36px;
-            }
-
-            .anim-3d-gallery-wrapper {
-                height: 100vh;
-            }
-
-            .anim-3d-gallery-wrap {
-                transform: translate(-50%,-50%) perspective(30vw) scale(1.5) rotateY(0);
-                animation: rotation3dcardZoomMobile 60s linear infinite;
-            }
-            
-            @keyframes rotation3dcardZoomMobile{
-                0%{
-                    transform: translate(-50%,-50%) perspective(30vw) scale(1.5) rotateY(0);
-                }
-                100%{
-                    transform: translate(-50%,-50%) perspective(30vw) scale(1.5) rotateY(360deg);
-                }
-            }
-            
-            .anim-3d-gallery-card {
-                transform: rotateY(calc((var(--position) - 1)*(360/var(--qty)) * 1deg)) translateZ(30vw);
-            }
-        }
-    </style>
-
-    <section class="animated-3d-gallery-sec relative">
+    <section class="animated-3d-gallery-sec relative overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/hero.avif'); z-index: 0;"></div>
-        <div class="backdrop-blur-md h-full w-full">
+        <div class="backdrop-blur-md h-full w-full relative">
             <div class="anim-3d-gallery-wrapper">
-                  <div class="gallery-title">
-                <h1>Hit the Ground Memories</h1>
-            </div>
                 @php
                     $galleryPath = public_path('storage/gallery');
                     $images = [];
@@ -104,30 +10,138 @@
                     if (is_dir($galleryPath)) {
                         $files = glob($galleryPath . '/*.avif');
                         sort($files, SORT_NATURAL);
-                        $images = array_map(function($file) {
+                        $images = array_map(function ($file) {
                             return basename($file);
                         }, $files);
                     }
 
                     $imageCount = count($images);
+                    // Duplicate images to create continuous scroll
+                    $imagesRepeated = array_merge($images, $images, $images);
                 @endphp
 
-                <div class="anim-3d-gallery-wrap" style="--qty: {{ $imageCount }}">
-                    @foreach($images as $index => $image)
-                        <div class="anim-3d-gallery-card" style="--position: {{ $index + 1 }}">
-                            <img src="{{ asset('storage/gallery/' . $image) }}" alt="Gallery Image {{ $index + 1 }}">
-                        </div>
-                    @endforeach
+                <div class="rotating-gallery-container">
+                    <div class="rotating-gallery-grid" style="--image-count: {{ $imageCount }}">
+                        @for ($row = 0; $row < 6; $row++)
+                            @php
+                                // Rotate the images array for each row to create variation
+                                $rowImages = array_merge(
+                                    array_slice($imagesRepeated, $row * 2),
+                                    array_slice($imagesRepeated, 0, $row * 2)
+                                );
+                            @endphp
+                            <div class="gallery-row">
+                                @foreach ($rowImages as $index => $image)
+                                    <div class="gallery-cell">
+                                        <img src="{{ asset('storage/gallery/' . $image) }}" alt="Gallery Image">
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-title-wrapper absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                <div class="gallery-title bg-black/60 backdrop-blur-sm px-8 py-4 rounded-lg inline-block">
+                    <h1>Hit the Grounds Memories</h1>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js'></script>
-    <script>
-        gsap.registerPlugin(CustomEase);
-    </script>
+    <style>
+        .animated-3d-gallery-sec {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .gallery-title-wrapper {
+            text-align: center;
+        }
+
+        .gallery-title h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .rotating-gallery-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .rotating-gallery-grid {
+            transform: rotate(-45deg);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: absolute;
+        }
+
+        .gallery-row {
+            display: flex;
+            gap: 1rem;
+            animation: scrollLeft calc(var(--image-count) * 0.5s) linear infinite;
+        }
+
+        .gallery-row:nth-child(even) {
+            animation-delay: calc(var(--image-count) * -0.5s);
+        }
+
+        .gallery-cell {
+            flex-shrink: 0;
+            width: auto;
+            height: 330px;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+
+        .gallery-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @keyframes scrollLeft {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(calc(-100% / 3));
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-cell {
+                width: auto;
+                height: 250px;
+            }
+
+            .gallery-title h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-cell {
+                width: auto;
+                height: 150px;
+            }
+
+            .gallery-title h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </x-layouts.public>
