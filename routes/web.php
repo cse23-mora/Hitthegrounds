@@ -16,6 +16,10 @@ Route::get('/partners', function () {
     return view('partners');
 })->name('partners');
 
+Route::get('/partnership/details', function () {
+    return view('partnership-details');
+})->name('partnership.details');
+
 Route::get('/timeline', function () {
     return view('timeine');
 })->name('timeline');
