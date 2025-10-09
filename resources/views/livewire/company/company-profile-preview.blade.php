@@ -61,7 +61,7 @@ new class extends Component {
                 <div class="prose max-w-none">
                     <h4 class="text-lg font-semibold mb-3">About Us</h4>
                     <div class="markdown-content" id="mainarticle">
-                        {!! \Illuminate\Support\Str::markdown($company->description) !!}
+                        {!! \Illuminate\Support\Str::markdown($company->description, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}
                     </div>
                 </div>
             @else
