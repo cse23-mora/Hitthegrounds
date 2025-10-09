@@ -8,6 +8,12 @@ new class extends Component {
 
     public function approve(): void
     {
+        $user = request()->attributes->get('user');
+
+        if (!$user || !$user->is_admin) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $this->team->update(['approved' => true]);
 
         $this->dispatch('team-approved');

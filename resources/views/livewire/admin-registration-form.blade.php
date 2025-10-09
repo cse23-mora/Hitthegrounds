@@ -5,6 +5,8 @@ use App\Models\VerificationCode;
 use App\Notifications\VerificationCodeNotification;
 use App\Services\JWTService;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Validation\ValidationException;
 use Livewire\Volt\Component;
 
 new class extends Component {
@@ -17,18 +19,34 @@ new class extends Component {
 
     public function register(): void
     {
+        // Rate limiting: max 3 attempts per 5 minutes per email
+        $key = 'admin-register:' . strtolower($this->email);
+        if (RateLimiter::tooManyAttempts($key, 3)) {
+            $seconds = RateLimiter::availableIn($key);
+            throw ValidationException::withMessages([
+                'email' => "Too many registration attempts. Please try again in {$seconds} seconds.",
+            ]);
+        }
+
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users,email'],
         ]);
 
+        RateLimiter::hit($key, 300); // 5 minutes
+
         // Create admin user (no company)
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
+        ]);
+
+        // Explicitly set company_id and is_admin using update to bypass fillable restriction
+        $user->update([
             'company_id' => null,
             'is_admin' => false,
         ]);
+
         $this->userId = $user->id;
 
         // Generate 6-digit verification code
