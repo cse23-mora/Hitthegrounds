@@ -2,20 +2,34 @@
 
 namespace App\Services;
 
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 use App\Models\User;
 use Exception;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 class JWTService
 {
     private string $secret;
+
     private string $algo;
+
     private int $ttl;
 
     public function __construct()
     {
-        $this->secret = base64_decode(config('app.jwt_secret'));
+        $secret = config('app.jwt_secret');
+
+        if (empty($secret)) {
+            throw new \RuntimeException('JWT_SECRET is not configured. Please set JWT_SECRET in your .env file.');
+        }
+
+        $this->secret = base64_decode($secret);
+
+        // Validate that the decoded secret is sufficiently long (at least 32 bytes for HS256)
+        if (strlen($this->secret) < 32) {
+            throw new \RuntimeException('JWT_SECRET must be at least 32 bytes when base64 decoded. Please generate a stronger secret.');
+        }
+
         $this->algo = config('app.jwt_algo', 'HS256');
         $this->ttl = config('app.jwt_ttl', 43200); // 1 month in minutes (30 days * 24 hours * 60 minutes = 43200)
     }
@@ -65,7 +79,7 @@ class JWTService
                 ->where('jwt_token', $token)
                 ->first();
 
-            if (!$user || !$user->jwt_expires_at || $user->jwt_expires_at->isPast()) {
+            if (! $user || ! $user->jwt_expires_at || $user->jwt_expires_at->isPast()) {
                 return null;
             }
 
@@ -82,7 +96,7 @@ class JWTService
     {
         $decoded = $this->validateToken($token);
 
-        if (!$decoded) {
+        if (! $decoded) {
             return null;
         }
 
@@ -107,7 +121,7 @@ class JWTService
     {
         $user = $this->getUserFromToken($token);
 
-        if (!$user) {
+        if (! $user) {
             return null;
         }
 
