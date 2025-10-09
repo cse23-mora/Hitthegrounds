@@ -2,7 +2,7 @@
 <section class="bg-base-200 py-16 md:py-24">
   <div class="container mx-auto px-4">
     <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" data-aos="zoom-in">
-      More Than Just a Game
+      BEYOND THE BOUNDARY
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="300">
@@ -10,10 +10,10 @@
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">
           <h3 class="card-title text-2xl md:text-3xl text-primary">
-            Elite Competition
+            CHAMPIONSHIP CLASH
           </h3>
           <p class="text-base md:text-lg">
-            Top-tier corporate teams vs. skilled university squads
+            Dynamic corporate teams face spirited university squads in matches that inspire excellence
           </p>
         </div>
       </div>
@@ -22,10 +22,10 @@
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">
           <h3 class="card-title text-2xl md:text-3xl text-primary">
-            Professional Grounds
+            THE GRAND ARENA
           </h3>
           <p class="text-base md:text-lg">
-            Matches played at the prestigious University of Moratuwa cricket grounds
+            Played on the iconic University of Moratuwa grounds, where tradition meets prestige.
           </p>
         </div>
       </div>
@@ -34,10 +34,10 @@
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">
           <h3 class="card-title text-2xl md:text-3xl text-primary">
-            Networking Hub
+            CONNECTIONS THAT COUNT
           </h3>
           <p class="text-base md:text-lg">
-            Connect with industry leaders, academics, and rising talents
+            Forge lasting ties with leaders, innovators, and rising talent off the pitch.
           </p>
         </div>
       </div>
@@ -46,10 +46,10 @@
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">
           <h3 class="card-title text-2xl md:text-3xl text-primary">
-            Community Building
+            BRIDGES THROUGH CRICKET
           </h3>
           <p class="text-base md:text-lg">
-            Strengthen academia-industry partnerships through shared passion
+            Strengthening bonds between academia and industry with every cheer and every handshake.
           </p>
         </div>
       </div>
