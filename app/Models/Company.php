@@ -15,6 +15,7 @@ class Company extends Model
         'phone',
         'logo',
         'description',
+        'max_team_count',
     ];
 
     public function users(): HasMany

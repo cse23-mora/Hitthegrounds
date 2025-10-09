@@ -7,7 +7,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
       <!-- University Teams -->
-      <a href="/teams/university" class="card card-compact bg-base-100 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group"  data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
+      <a href="{{-- route('teams.university') --}}" class="card card-compact bg-base-100 shadow-sm hover:shadow-md transition-all duration-300 cursor-default group"  data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
         <figure class="h-64 md:h-80 overflow-hidden">
           <img
             src="/uni-team.avif"
@@ -23,7 +23,7 @@
       </a>
 
       <!-- Industry Teams -->
-      <a href="/teams/industry" class="card card-compact bg-base-100 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
+      <a href="{{-- route('teams.industry') --}}" class="card card-compact bg-base-100 shadow-sm hover:shadow-md transition-all duration-300 cursor-default group" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
         <figure class="h-64 md:h-80 overflow-hidden" >
           <img
             src="/industry-team.avif"
