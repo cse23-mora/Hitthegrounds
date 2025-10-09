@@ -169,6 +169,16 @@ select:focus[data-flux-control] {
 
 
 @layer components {
+  /* Prevent AOS animations from causing horizontal overflow */
+  body,
+  html {
+    @apply overflow-x-hidden;
+  }
+
+  [data-aos] {
+    @apply overflow-x-clip;
+  }
+
   #mainarticle {
     @apply text-base leading-relaxed max-w-none;
     color: var(--base-content);
