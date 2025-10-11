@@ -37,7 +37,7 @@
                 </div>
                 <h3 class="text-xl font-['Staatliches'] text-base-content mb-2">Preparation Time</h3>
                 <p class="text-warning text-3xl font-['Staatliches']">20 Days</p>
-                <p class="text-base-content/70 text-sm font-['Poppins'] mt-2">Nov 9 - Dec 29, 2025</p>
+                <p class="text-base-content/70 text-sm font-['Poppins'] mt-2">Nov 9 - Nov 29, 2025</p>
               </div>
             </div>
 

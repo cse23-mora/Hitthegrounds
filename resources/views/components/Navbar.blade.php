@@ -30,12 +30,9 @@
       </div>
 
       <!-- Logo -->
-      <a class="btn btn-ghost text-sm sm:text-lg md:text-xl lg:text-2xl font-black normal-case px-1 sm:px-4">
-        <span class="text-base-content">HIT</span>
-        <span class="text-primary ml-1">THE</span>
-     
-        <span class="text-base-content ml-1 xs:hidden sm:inline">GROUNDS</span>
-    
+      <a class="btn btn-ghost px-1 sm:px-4">
+        <img src="/nav_logo_dark.avif" alt="HIT THE GROUNDS" class="h-8 sm:h-10 md:h-12 block dark:hidden">
+        <img src="/nav_logo_light.avif" alt="HIT THE GROUNDS" class="h-8 sm:h-10 md:h-12 hidden dark:block">
       </a>
     </div>
 
