@@ -16,6 +16,7 @@ new class extends Component {
     public string $contact_email = '';
     public string $contact_person_phone = '';
     public string $verification_code = '';
+    public string $turnstile_token = '';
 
     public bool $showVerification = false;
     public ?int $userId = null;
@@ -27,7 +28,20 @@ new class extends Component {
             'contact_person_name' => ['required', 'string', 'max:255'],
             'contact_email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users,email'],
             'contact_person_phone' => ['required', 'string', 'max:20'],
+            'turnstile_token' => ['required', 'string'],
         ]);
+
+        // Verify Turnstile token
+        $response = \Illuminate\Support\Facades\Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+            'secret' => config('turnstile.secret_key'),
+            'response' => $validated['turnstile_token'],
+        ]);
+
+        if (!$response->successful() || !$response->json('success')) {
+            throw ValidationException::withMessages([
+                'turnstile_token' => 'Captcha verification failed. Please try again.',
+            ]);
+        }
 
         // Rate limiting: max 3 registration attempts per 5 minutes per email
         $key = 'register:' . strtolower($validated['contact_email']);
@@ -126,7 +140,7 @@ new class extends Component {
 
 <div class="flex flex-col gap-6">
     @if (!$showVerification)
-        <form wire:submit="register" class="flex flex-col gap-6">
+        <form wire:submit="register" class="flex flex-col gap-6" id="company-registration-form">
             <x-mary-input
                 wire:model="company_name"
                 label="{{ __('Company Name') }}"
@@ -161,12 +175,39 @@ new class extends Component {
                 placeholder="+1 (555) 123-4567"
             />
 
+            @error('turnstile_token')
+                <x-mary-alert icon="o-exclamation-triangle" class="alert-error">
+                    {{ $message }}
+                </x-mary-alert>
+            @enderror
+
+            <div class="flex justify-center">
+                <div id="turnstile-widget"></div>
+            </div>
+            <input type="hidden" wire:model="turnstile_token" id="turnstile-token">
+
             <div class="flex items-center justify-end">
                 <x-mary-button type="submit" class="btn-primary w-full">
                     {{ __('Register') }}
                 </x-mary-button>
             </div>
         </form>
+
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+        <script>
+            window.onloadTurnstileCallback = function () {
+                turnstile.render('#turnstile-widget', {
+                    sitekey: '{{ config('turnstile.site_key') }}',
+                    theme: 'light',
+                    size: 'normal',
+                    appearance: 'always',
+                    callback: function(token) {
+                        document.getElementById('turnstile-token').value = token;
+                        @this.set('turnstile_token', token);
+                    }
+                });
+            };
+        </script>
 
         <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-base-content/70">
             <span>{{ __('Already have an account?') }}</span>
