@@ -1,23 +1,16 @@
 
-<footer class="bg-neutral text-neutral-content border-t border-base-300">
-  <div class="container mx-auto px-4 sm:px-8 py-8">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <!-- Brand -->
-      <div class="text-2xl font-bold tracking-tight">
-        HIT THE GROUNDS
-      </div>
+<footer class="bg-base-300 text-neutral-content border-t border-base-300">
+  <div class="container mx-auto px-4 sm:px-8 py-16">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+      <!-- HTG Logo (theme-aware) -->
+      <img src="/nav_logo_dark.avif" alt="HIT THE GROUNDS" class="h-12 sm:h-14 md:h-16 w-auto block dark:hidden">
+      <img src="/nav_logo_white.avif" alt="HIT THE GROUNDS" class="h-12 sm:h-14 md:h-16 w-auto hidden dark:block">
 
-      <!-- Links -->
-      <div class="flex items-center gap-6">
-        <a href="#" class="text-sm hover:text-primary transition-colors">Privacy</a>
-        <span class="text-base-content/30">|</span>
-        <a href="#" class="text-sm hover:text-primary transition-colors">Terms</a>
-      </div>
+      <!-- CSE Logo -->
+      <img src="/cse.avif" alt="CSE" class="h-12 sm:h-14 md:h-16 w-auto">
 
-      <!-- Copyright -->
-      <p class="text-sm opacity-70">
-        © 2025 Hit The Grounds
-      </p>
+      <!-- CSESS Logo -->
+      <img src="/csess.avif" alt="CSESS" class="h-12 sm:h-14 md:h-16 w-auto dark:invert">
     </div>
   </div>
 </footer>

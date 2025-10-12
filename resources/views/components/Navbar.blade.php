@@ -30,9 +30,11 @@
       </div>
 
       <!-- Logo -->
-      <a class="btn btn-ghost px-1 sm:px-4">
+      <a class="btn btn-ghost px-1 sm:px-4 flex items-center gap-2">
         <img src="/nav_logo_dark.avif" alt="HIT THE GROUNDS" class="h-8 sm:h-10 md:h-12 block dark:hidden">
         <img src="/nav_logo_light.avif" alt="HIT THE GROUNDS" class="h-8 sm:h-10 md:h-12 hidden dark:block">
+        <img src="/cse.avif" alt="CSE" class="h-8 sm:h-10 md:h-12 hidden lg:block ml-5">
+  
       </a>
     </div>
 
