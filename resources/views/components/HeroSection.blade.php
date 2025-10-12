@@ -9,14 +9,19 @@
     <div class="hero-content relative lg:absolute lg:left-8 xl:left-16 2xl:left-24 lg:top-16 xl:top-20 2xl:top-24 flex-col items-start gap-8 sm:gap-10 md:gap-12 w-full max-w-full lg:max-w-2xl xl:max-w-3xl z-10 px-4 sm:px-6 md:px-8 lg:px-0 py-12 sm:py-16 lg:py-0">
       <div class="flex flex-col gap-6 sm:gap-8">
         <!-- Main heading -->
-        <h1 class="w-full" data-aos="fade-up" data-aos-duration="500">
-          <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Hit </span>
-          <span class="text-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">The </span>
-          <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Grounds </span>
-        </h1>
+        <div>
+          <h1 class="w-full text-center md:text-left" data-aos="fade-up" data-aos-duration="500">
+            <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Hit </span>
+            <span class="text-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">The </span>
+            <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-['Jolly_Lodger'] uppercase leading-tight">Grounds </span>
+          </h1>
+          <p class="text-white/70 dark:text-base-content/70 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal font-['Jolly_Lodger'] tracking-wider text-center md:text-left lg:text-right mt-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+            By CSE
+          </p>
+        </div>
 
         <!-- Description -->
-        <p class="text-white dark:text-base-content text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Poppins'] leading-relaxed max-w-prose" data-aos="zoom-in" >
+        <p class="text-white dark:text-base-content text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium font-['Poppins'] leading-relaxed max-w-prose text-center md:text-left" data-aos="zoom-in" >
           Join us for Hit the Grounds – the annual cricket tournament organized by the Department of Computer Science and Engineering of the University of Moratuwa. Where the spirit from the university meets the drive from the industry, it's more than just a game, it's where passion and excellence collide!
         </p>
 
