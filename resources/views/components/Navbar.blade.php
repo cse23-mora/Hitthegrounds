@@ -25,17 +25,16 @@
           <li><a href="{{ route('awards') }}" class="{{ request()->routeIs('awards') ? 'active text-primary' : 'text-base-content' }}">Awards</a></li>
           {{-- <li><a href="{{ route('partners') }}" class="{{ request()->routeIs('partners') ? 'active text-primary' : 'text-base-content' }}">Partners</a></li> --}}
           <li><a href="{{ route('gallery') }}" class="{{ request()->routeIs('gallery') ? 'active text-primary' : 'text-base-content' }}">Gallery</a></li>
-          <li><a href="{{ route('support') }}" class="{{ request()->routeIs('support') ? 'active text-primary' : 'text-base-content' }}">Support</a></li>
+          <li><a href="{{ route('committee') }}" class="{{ request()->routeIs('committee') ? 'active text-primary' : 'text-base-content' }}">Committee</a></li>
         </ul>
       </div>
 
       <!-- Logo -->
-      <a class="btn btn-ghost text-sm sm:text-lg md:text-xl lg:text-2xl font-black normal-case px-1 sm:px-4">
-        <span class="text-base-content">HIT</span>
-        <span class="text-primary ml-1">THE</span>
-     
-        <span class="text-base-content ml-1 xs:hidden sm:inline">GROUNDS</span>
-    
+      <a class="btn btn-ghost px-1 sm:px-4 flex items-center gap-2">
+        <img src="/nav_logo_dark.avif" alt="HIT THE GROUNDS" class="h-8 sm:h-10 md:h-12 block dark:hidden">
+        <img src="/nav_logo_light.avif" alt="HIT THE GROUNDS" class="h-8 sm:h-10 md:h-12 hidden dark:block">
+        <img src="/cse.avif" alt="CSE" class="h-8 sm:h-10 md:h-12 hidden lg:block ml-5">
+  
       </a>
     </div>
 
@@ -48,7 +47,7 @@
           <li><a href="{{ route("awards") }}" class="{{ request()->routeIs('awards') ? 'active text-primary' : 'text-base-content' }}">Awards</a></li>
           {{-- <li><a href="{{ route("partners") }}" class="{{ request()->routeIs('partners') ? 'active text-primary' : 'text-base-content' }}">Partners</a></li> --}}
           <li><a href="{{ route("gallery") }}" class="{{ request()->routeIs('gallery') ? 'active text-primary' : 'text-base-content' }}">Gallery</a></li>
-          <li><a href="{{ route("support") }}" class="{{ request()->routeIs('support') ? 'active text-primary' : 'text-base-content' }}">Support</a></li>
+          <li><a href="{{ route("committee") }}" class="{{ request()->routeIs('committee') ? 'active text-primary' : 'text-base-content' }}">Committee</a></li>
       </ul>
     </div>
 

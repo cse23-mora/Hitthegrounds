@@ -13,25 +13,39 @@ new class extends Component {
     public string $name = '';
     public string $email = '';
     public string $verification_code = '';
+    public string $turnstile_token = '';
 
     public bool $showVerification = false;
     public ?int $userId = null;
 
     public function register(): void
     {
+        $validated = $this->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users,email'],
+            'turnstile_token' => ['required', 'string'],
+        ]);
+
+        // Verify Turnstile token
+        $response = \Illuminate\Support\Facades\Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+            'secret' => config('turnstile.secret_key'),
+            'response' => $validated['turnstile_token'],
+        ]);
+
+        if (!$response->successful() || !$response->json('success')) {
+            throw ValidationException::withMessages([
+                'turnstile_token' => 'Captcha verification failed. Please try again.',
+            ]);
+        }
+
         // Rate limiting: max 3 attempts per 5 minutes per email
-        $key = 'admin-register:' . strtolower($this->email);
+        $key = 'admin-register:' . strtolower($validated['email']);
         if (RateLimiter::tooManyAttempts($key, 3)) {
             $seconds = RateLimiter::availableIn($key);
             throw ValidationException::withMessages([
                 'email' => "Too many registration attempts. Please try again in {$seconds} seconds.",
             ]);
         }
-
-        $validated = $this->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:users,email'],
-        ]);
 
         RateLimiter::hit($key, 300); // 5 minutes
 
@@ -104,7 +118,7 @@ new class extends Component {
 
 <div class="flex flex-col gap-6">
     @if (!$showVerification)
-        <form wire:submit="register" class="flex flex-col gap-6">
+        <form wire:submit="register" class="flex flex-col gap-6" id="admin-registration-form">
             <x-mary-input
                 wire:model="name"
                 label="{{ __('Full Name') }}"
@@ -123,12 +137,39 @@ new class extends Component {
                 placeholder="admin@example.com"
             />
 
+            @error('turnstile_token')
+                <x-mary-alert icon="o-exclamation-triangle" class="alert-error">
+                    {{ $message }}
+                </x-mary-alert>
+            @enderror
+
+            <div class="flex justify-center">
+                <div id="admin-turnstile-widget"></div>
+            </div>
+            <input type="hidden" wire:model="turnstile_token" id="admin-turnstile-token">
+
             <div class="flex items-center justify-end">
                 <x-mary-button type="submit" class="btn-primary w-full">
                     {{ __('Register as Admin') }}
                 </x-mary-button>
             </div>
         </form>
+
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadAdminTurnstileCallback" async defer></script>
+        <script>
+            window.onloadAdminTurnstileCallback = function () {
+                turnstile.render('#admin-turnstile-widget', {
+                    sitekey: '{{ config('turnstile.site_key') }}',
+                    theme: 'light',
+                    size: 'normal',
+                    appearance: 'always',
+                    callback: function(token) {
+                        document.getElementById('admin-turnstile-token').value = token;
+                        @this.set('turnstile_token', token);
+                    }
+                });
+            };
+        </script>
     @else
         <!-- Verification Form -->
         <div class="text-center">

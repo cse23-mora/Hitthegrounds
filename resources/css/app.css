@@ -7,7 +7,6 @@
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
-@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -82,7 +81,6 @@ select:focus[data-flux-control] {
 @source "../../vendor/robsontenorio/mary/src/View/Components/**/*.php";
 
 /* Theme toggle */
-@custom-variant dark (&:where(.dark, .dark *));
 
 /**
 * Paginator - Traditional style
@@ -169,6 +167,16 @@ select:focus[data-flux-control] {
 
 
 @layer components {
+  /* Prevent AOS animations from causing horizontal overflow */
+  body,
+  html {
+    @apply overflow-x-hidden;
+  }
+
+  [data-aos] {
+    @apply overflow-x-clip;
+  }
+
   #mainarticle {
     @apply text-base leading-relaxed max-w-none;
     color: var(--base-content);

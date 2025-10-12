@@ -1,18 +1,5 @@
 <x-layouts.public>
-    <!-- Hero Section -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-base-100">
-        <div class="container mx-auto px-4 sm:px-6 md:px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-['Jolly_Lodger'] uppercase mb-6" data-aos="fade-up" data-aos-duration="1000">
-                    <span class="text-base-content">Need </span>
-                    <span class="text-primary">Support?</span>
-                </h1>
-                <p class="text-base-content/80 text-base sm:text-lg md:text-xl font-['Poppins'] leading-relaxed" data-aos="fade-up" data-aos-duration="1500">
-                    Get in touch with our team for any questions or assistance regarding Hit the Grounds
-                </p>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Contact Cards Section -->
     <section class="bg-base-100 py-12 sm:py-16 md:py-20">
@@ -127,7 +114,7 @@
             <!-- Technical Support -->
             <h2 class="text-3xl sm:text-4xl font-bold font-['Staatliches'] text-center mb-8 mt-12" data-aos="fade-up">
                 <span class="text-primary">Technical </span>
-                <span class="text-base-content">Support</span>
+                <span class="text-base-content">Committee</span>
             </h2>
 
             <div class="flex justify-center mb-16">
@@ -197,7 +184,7 @@
             <!-- Partnership Support -->
             <h2 class="text-3xl sm:text-4xl font-bold font-['Staatliches'] text-center mb-8 mt-12" data-aos="fade-up">
                 <span class="text-primary">Partnership </span>
-                <span class="text-base-content">Support</span>
+                <span class="text-base-content">Committee</span>
             </h2>
 
             <div class="flex justify-center mb-16">
