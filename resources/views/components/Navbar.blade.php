@@ -25,7 +25,7 @@
           <li><a href="{{ route('awards') }}" class="{{ request()->routeIs('awards') ? 'active text-primary' : 'text-base-content' }}">Awards</a></li>
           {{-- <li><a href="{{ route('partners') }}" class="{{ request()->routeIs('partners') ? 'active text-primary' : 'text-base-content' }}">Partners</a></li> --}}
           <li><a href="{{ route('gallery') }}" class="{{ request()->routeIs('gallery') ? 'active text-primary' : 'text-base-content' }}">Gallery</a></li>
-          <li><a href="{{ route('support') }}" class="{{ request()->routeIs('support') ? 'active text-primary' : 'text-base-content' }}">Support</a></li>
+          <li><a href="{{ route('committee') }}" class="{{ request()->routeIs('committee') ? 'active text-primary' : 'text-base-content' }}">Committee</a></li>
         </ul>
       </div>
 
@@ -45,7 +45,7 @@
           <li><a href="{{ route("awards") }}" class="{{ request()->routeIs('awards') ? 'active text-primary' : 'text-base-content' }}">Awards</a></li>
           {{-- <li><a href="{{ route("partners") }}" class="{{ request()->routeIs('partners') ? 'active text-primary' : 'text-base-content' }}">Partners</a></li> --}}
           <li><a href="{{ route("gallery") }}" class="{{ request()->routeIs('gallery') ? 'active text-primary' : 'text-base-content' }}">Gallery</a></li>
-          <li><a href="{{ route("support") }}" class="{{ request()->routeIs('support') ? 'active text-primary' : 'text-base-content' }}">Support</a></li>
+          <li><a href="{{ route("committee") }}" class="{{ request()->routeIs('committee') ? 'active text-primary' : 'text-base-content' }}">Committee</a></li>
       </ul>
     </div>
 
