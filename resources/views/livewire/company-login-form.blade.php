@@ -56,8 +56,20 @@ new class extends Component {
         ]);
 
         // Send verification email
-        Notification::route('mail', $user->email)
-            ->notify(new VerificationCodeNotification($code));
+        try {
+            Notification::route('mail', $user->email)
+                ->notify(new VerificationCodeNotification($code));
+        } catch (\Exception $e) {
+            // Log the error for debugging
+            \Log::error('Failed to send verification email', [
+                'email' => $user->email,
+                'error' => $e->getMessage()
+            ]);
+
+            throw ValidationException::withMessages([
+                'contact_email' => 'Failed to send verification email. Please try again later or contact support.',
+            ]);
+        }
 
         $this->showVerification = true;
     }
