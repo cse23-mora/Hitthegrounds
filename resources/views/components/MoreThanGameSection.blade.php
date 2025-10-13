@@ -1,7 +1,7 @@
 
 <section class="bg-base-200 py-16 md:py-24">
   <div class="container mx-auto px-4">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" data-aos="zoom-in">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 font-title" data-aos="zoom-in">
       BEYOND THE BOUNDARY
     </h2>
 
@@ -9,7 +9,7 @@
       <!-- Elite Competition -->
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">
-          <h3 class="card-title text-2xl md:text-3xl text-primary">
+          <h3 class="card-title text-2xl md:text-3xl text-primary font-title">
             CHAMPIONSHIP CLASH
           </h3>
           <p class="text-base md:text-lg">
@@ -21,7 +21,7 @@
       <!-- Professional Grounds -->
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">
-          <h3 class="card-title text-2xl md:text-3xl text-primary">
+          <h3 class="card-title text-2xl md:text-3xl text-primary font-title">
             THE GRAND ARENA
           </h3>
           <p class="text-base md:text-lg">
@@ -33,7 +33,7 @@
       <!-- Networking Hub -->
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">
-          <h3 class="card-title text-2xl md:text-3xl text-primary">
+          <h3 class="card-title text-2xl md:text-3xl text-primary font-title">
             CONNECTIONS THAT COUNT
           </h3>
           <p class="text-base md:text-lg">
@@ -45,7 +45,7 @@
       <!-- Community Building -->
       <div class="card bg-base-100 shadow-sm border-base-300 border-1">
         <div class="card-body">
-          <h3 class="card-title text-2xl md:text-3xl text-primary">
+          <h3 class="card-title text-2xl md:text-3xl text-primary font-title">
             BRIDGES THROUGH CRICKET
           </h3>
           <p class="text-base md:text-lg">

@@ -2,17 +2,17 @@
     <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12" data-aos="fade-up">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-['Jolly_Lodger'] uppercase mb-4">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading uppercase mb-4">
                     <span class="text-primary">Registration </span>
                         <span class="text-base-content">Information</span></h1>
-                <p class="text-base-content/80 text-base sm:text-lg md:text-xl font-['Poppins'] max-w-3xl mx-auto">Join us for an exciting cricket tournament</p>
+                <p class="text-base-content/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">Join us for an exciting cricket tournament</p>
             </div>
 
             <div class="space-y-8" data-aos="fade-up" data-aos-delay="100">
                 <!-- Guidelines Card -->
                 <div class="card bg-base-200 shadow-sm">
                     <div class="card-body">
-                        <h2 class="card-title text-3xl mb-6">Guidelines</h2>
+                        <h2 class="card-title text-3xl mb-6 font-title">Guidelines</h2>
                         <div class="space-y-4">
                             <div class="flex items-start gap-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -72,7 +72,7 @@
                 <!-- Registration Process Card -->
                 <div class="card bg-base-200 shadow-sm">
                     <div class="card-body">
-                        <h2 class="card-title text-3xl mb-6">Registration Process</h2>
+                        <h2 class="card-title text-3xl mb-6 font-title">Registration Process</h2>
                         <div class="space-y-6">
                             <!-- Step 1 -->
                             <div class="flex gap-4">
@@ -148,7 +148,7 @@
                 <!-- CTA Section -->
                 <div class="card bg-primary text-primary-content shadow-sm">
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title text-2xl mb-2">Ready to Participate?</h2>
+                        <h2 class="card-title text-2xl mb-2 font-title">Ready to Participate?</h2>
                         <p class="mb-6">Register your company and start building your team today</p>
                         @php
                             $token = request()->cookie('company_token');
@@ -195,7 +195,7 @@
                 <!-- Contact Information Card -->
                 <div class="card bg-base-200 shadow-sm">
                     <div class="card-body">
-                        <h2 class="card-title text-2xl mb-4">Need Help?</h2>
+                        <h2 class="card-title text-2xl mb-4 font-title">Need Help?</h2>
                         <p class="text-base-content/80">If you have any questions about the registration process or tournament details, please don't hesitate to reach out to our organizing committee.</p>
                     </div>
                 </div>

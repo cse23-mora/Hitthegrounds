@@ -7,7 +7,7 @@
             <div class="max-w-6xl mx-auto">
 
             <!-- Event Co-Chairs -->
-            <h2 class="text-3xl sm:text-4xl font-bold font-['Staatliches'] text-center mb-8" data-aos="fade-up">
+            <h2 class="text-3xl sm:text-4xl font-bold font-title text-center mb-8" data-aos="fade-up">
                 <span class="text-primary">Event </span>
                 <span class="text-base-content">Co-Chairs</span>
             </h2>
@@ -112,7 +112,7 @@
             </div>
 
             <!-- Technical Support -->
-            <h2 class="text-3xl sm:text-4xl font-bold font-['Staatliches'] text-center mb-8 mt-12" data-aos="fade-up">
+            <h2 class="text-3xl sm:text-4xl font-bold font-title text-center mb-8 mt-12" data-aos="fade-up">
                 <span class="text-primary">Technical </span>
                 <span class="text-base-content">Committee</span>
             </h2>
@@ -182,7 +182,7 @@
             </div>
 
             <!-- Partnership Support -->
-            <h2 class="text-3xl sm:text-4xl font-bold font-['Staatliches'] text-center mb-8 mt-12" data-aos="fade-up">
+            <h2 class="text-3xl sm:text-4xl font-bold font-title text-center mb-8 mt-12" data-aos="fade-up">
                 <span class="text-primary">Partnership </span>
                 <span class="text-base-content">Committee</span>
             </h2>

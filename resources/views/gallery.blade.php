@@ -1,6 +1,6 @@
 <x-layouts.public>
     <section class="animated-3d-gallery-sec relative overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/hero.avif'); z-index: 0;"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/hero/0_Background.avif'); z-index: 0;"></div>
         <div class="backdrop-blur-md h-full w-full relative">
             <div class="anim-3d-gallery-wrapper">
                 @php
@@ -44,7 +44,7 @@
 
             <div class="gallery-title-wrapper absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
                 <div class="gallery-title bg-black/60 backdrop-blur-sm px-8 py-4 rounded-lg inline-block">
-                    <h1>Hit the Grounds Memories</h1>
+                    <h1 class="font-bold font-title">Hit the Grounds Memories</h1>
                 </div>
             </div>
         </div>
