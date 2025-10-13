@@ -21,7 +21,7 @@
                                 <div>
                                     <p class="font-semibold text-lg">Team Composition</p>
                                     <p class="text-base-content/80">Every team must consist of <span class="font-bold text-primary">12 players</span>, made up of <span class="font-bold">9 male</span> players and <span class="font-bold">3 female</span> players.</p>
-                                    <p class="text-sm text-base-content/70 mt-1">On Field: 9 players | Reserve: 3 players</p>
+                                    <p class="text-sm text-base-content/70 mt-1">On Field: 8 players | Reserve: 4 players</p>
                                 </div>
                             </div>
 
@@ -42,7 +42,7 @@
                                 </svg>
                                 <div>
                                     <p class="font-semibold text-lg">Partner Companies</p>
-                                    <p class="text-base-content/80">Title, Gold, Silver and Bronze partners do not need to complete team registration through the google form provided under Registration section; the process will be managed directly with their designated company contact.</p>
+                                    <p class="text-base-content/80">Title, Gold, Silver and Bronze partners do not need to complete team registration through form provided under Registration section; the process will be managed directly with their designated company contact.</p>
                                 </div>
                             </div>
 
