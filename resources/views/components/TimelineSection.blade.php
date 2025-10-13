@@ -3,11 +3,11 @@
     <div class="container mx-auto px-4 sm:px-6 md:px-8">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-16" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-['Jolly_Lodger'] uppercase mb-4">
+        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading uppercase mb-4">
           <span class="text-base-content">Event </span>
           <span class="text-primary">Timeline</span>
         </h2>
-        <p class="text-base-content/80 text-base sm:text-lg md:text-xl font-['Poppins'] max-w-3xl mx-auto">
+        <p class="text-base-content/80 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
           Mark your calendars! Here are the key dates for Hit the Grounds 2025.
         </p>
       </div>
@@ -24,9 +24,9 @@
               </div>
             </div>
             <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8" data-aos="fade-right" data-aos-duration="2000">
-              <time class="font-['Staatliches'] text-lg text-info">October 10th, 2025</time>
-              <div class="text-xl md:text-2xl font-['Staatliches'] text-base-content mt-2">Event Announcement</div>
-              <p class="text-base-content/70 font-['Poppins'] text-sm md:text-base mt-2">
+              <time class="font-title text-lg text-info">October 10th, 2025</time>
+              <div class="text-xl md:text-2xl font-title text-base-content mt-2">Event Announcement</div>
+              <p class="text-base-content/70 text-sm md:text-base mt-2">
                 Official announcement of Hit the Grounds 2025
               </p>
             </div>
@@ -42,9 +42,9 @@
               </div>
             </div>
             <div class="timeline-end md:ml-8 mb-10 md:mb-0" data-aos="fade-left" data-aos-duration="2000">
-              <time class="font-['Staatliches'] text-lg text-success">October 13th, 2025</time>
-              <div class="text-xl md:text-2xl font-['Staatliches'] text-base-content mt-2">Open Registrations</div>
-              <p class="text-base-content/70 font-['Poppins'] text-sm md:text-base mt-2">
+              <time class="font-title text-lg text-success">October 13th, 2025</time>
+              <div class="text-xl md:text-2xl font-title text-base-content mt-2">Open Registrations</div>
+              <p class="text-base-content/70 text-sm md:text-base mt-2">
                 Team registration opens - secure your spot!
               </p>
             </div>
@@ -60,9 +60,9 @@
               </div>
             </div>
             <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8" data-aos="fade-right" data-aos-duration="2000">
-              <time class="font-['Staatliches'] text-lg text-warning">November 8th, 2025</time>
-              <div class="text-xl md:text-2xl font-['Staatliches'] text-base-content mt-2">Registration Closing</div>
-              <p class="text-base-content/70 font-['Poppins'] text-sm md:text-base mt-2">
+              <time class="font-title text-lg text-warning">November 8th, 2025</time>
+              <div class="text-xl md:text-2xl font-title text-base-content mt-2">Registration Closing</div>
+              <p class="text-base-content/70 text-sm md:text-base mt-2">
                 Last chance to register your team
               </p>
             </div>
@@ -78,9 +78,9 @@
               </div>
             </div>
             <div class="timeline-end md:ml-8" data-aos="fade-left" data-aos-duration="2000">
-              <time class="font-['Staatliches'] text-xl text-error">November 29th, 2025</time>
-              <div class="text-2xl md:text-3xl font-['Staatliches'] text-error mt-2">Event Day</div>
-              <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg mt-2 font-semibold">
+              <time class="font-title text-xl text-error">November 29th, 2025</time>
+              <div class="text-2xl md:text-3xl font-title text-error mt-2">Event Day</div>
+              <p class="text-base-content/80 text-base md:text-lg mt-2 font-semibold">
                 The big day - Let the games begin! 🏏
               </p>
             </div>
@@ -93,14 +93,14 @@
       <div class="mt-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1500">
         <div class="card bg-gradient-to-r from-primary/20 to-accent/20 shadow-xl border border-primary">
           <div class="card-body text-center p-8">
-            <h3 class="text-2xl md:text-3xl font-['Staatliches'] text-primary mb-4">
+            <h3 class="text-2xl md:text-3xl font-title text-primary mb-4">
               Don't Miss Out!
             </h3>
-            <p class="text-base-content/80 font-['Poppins'] text-base md:text-lg mb-6">
+            <p class="text-base-content/80 text-base md:text-lg mb-6">
               Register your team before November 8th to be part of the most exciting cricket tournament of the year!
             </p>
             <div class="card-actions justify-center">
-              <x-mary-button label="Register Now" link="{{ route('register') }}" class="btn btn-primary btn-lg font-['Poppins']" />
+              <x-mary-button label="Register Now" link="{{ route('register') }}" class="btn btn-primary btn-lg" />
             </div>
           </div>
         </div>
