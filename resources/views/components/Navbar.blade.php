@@ -20,7 +20,7 @@
           tabindex="0"
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow border border-base-300">
           <li><a href="/" class="{{ request()->routeIs('home') ? 'active text-primary' : 'text-base-content' }}">Home</a></li>
-          <li><a href="{{ route('register') }}" class="{{ request()->routeIs('register') ? 'active text-primary' : 'text-base-content' }}">Registrations</a></li>
+          <li><a href="{{ route('registrations') }}" class="{{ request()->routeIs('registrations') ? 'active text-primary' : 'text-base-content' }}">Registrations</a></li>
           <li><a href="{{ route('timeline') }}" class="{{ request()->routeIs('timeline') ? 'active text-primary' : 'text-base-content' }}">Timeline</a></li>
           <li><a href="{{ route('awards') }}" class="{{ request()->routeIs('awards') ? 'active text-primary' : 'text-base-content' }}">Awards</a></li>
           {{-- <li><a href="{{ route('partners') }}" class="{{ request()->routeIs('partners') ? 'active text-primary' : 'text-base-content' }}">Partners</a></li> --}}
@@ -42,7 +42,7 @@
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 gap-2 xl:gap-4">
         <li><a href="/" class="{{ request()->routeIs('home') ? 'active text-primary' : 'text-base-content' }}">Home</a></li>
-          <li><a href="{{ route("register") }}" class="{{ request()->routeIs('register') ? 'active text-primary' : 'text-base-content' }}">Registrations</a></li>
+          <li><a href="{{ route("registrations") }}" class="{{ request()->routeIs('registrations') ? 'active text-primary' : 'text-base-content' }}">Registrations</a></li>
           <li><a href="{{ route("timeline") }}" class="{{ request()->routeIs('timeline') ? 'active text-primary' : 'text-base-content' }}">Timeline</a></li>
           <li><a href="{{ route("awards") }}" class="{{ request()->routeIs('awards') ? 'active text-primary' : 'text-base-content' }}">Awards</a></li>
           {{-- <li><a href="{{ route("partners") }}" class="{{ request()->routeIs('partners') ? 'active text-primary' : 'text-base-content' }}">Partners</a></li> --}}
@@ -53,9 +53,37 @@
 
     <!-- CTA Button -->
     <div class="navbar-end">
-      <a href="{{ route('login') }}" class="btn btn-primary btn-sm sm:btn-md text-xs sm:text-sm md:text-base">
-        <span class="hidden sm:inline">Company Login</span>
-        <span class="sm:hidden">Login</span>
-      </a>
+      @php
+        $token = request()->cookie('company_token');
+        $user = null;
+        $isAdmin = false;
+
+        if ($token) {
+            $jwtService = new App\Services\JWTService();
+            $user = $jwtService->getUserFromToken($token);
+            if ($user) {
+                $isAdmin = $user->is_admin == true;
+            }
+        }
+      @endphp
+
+      @if($user)
+        @if($isAdmin)
+          <a href="{{ route('admin.dashboard') }}" class="btn btn-primary btn-sm sm:btn-md text-xs sm:text-sm md:text-base">
+            <span class="hidden sm:inline">Admin Dashboard</span>
+            <span class="sm:hidden">Admin</span>
+          </a>
+        @else
+          <a href="{{ route('company.dashboard') }}" class="btn btn-primary btn-sm sm:btn-md text-xs sm:text-sm md:text-base">
+            <span class="hidden sm:inline">Dashboard</span>
+            <span class="sm:hidden">Dashboard</span>
+          </a>
+        @endif
+      @else
+        <a href="{{ route('login') }}" class="btn btn-primary btn-sm sm:btn-md text-xs sm:text-sm md:text-base">
+          <span class="hidden sm:inline">Company Login</span>
+          <span class="sm:hidden">Login</span>
+        </a>
+      @endif
     </div>
   </div>

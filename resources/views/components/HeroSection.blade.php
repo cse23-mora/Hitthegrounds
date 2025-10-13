@@ -31,7 +31,29 @@
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
           <x-mary-button label="View Timeline" link="{{ route('timeline') }}" class="btn btn-neutral btn-md sm:btn-md lg:btn-lg font-['Poppins'] w-full sm:w-auto min-h-12" />
-          <x-mary-button label="Register" link="{{ route('register') }}" class="btn btn-primary btn-md sm:btn-md lg:btn-lg" />
+          @php
+            $token = request()->cookie('company_token');
+            $user = null;
+            $isAdmin = false;
+
+            if ($token) {
+                $jwtService = new App\Services\JWTService();
+                $user = $jwtService->getUserFromToken($token);
+                if ($user) {
+                    $isAdmin = $user->is_admin == true;
+                }
+            }
+          @endphp
+
+          @if($user)
+            @if($isAdmin)
+              <x-mary-button label="Admin Dashboard" link="{{ route('admin.dashboard') }}" class="btn btn-primary btn-md sm:btn-md lg:btn-lg" />
+            @else
+              <x-mary-button label="Dashboard" link="{{ route('company.dashboard') }}" class="btn btn-primary btn-md sm:btn-md lg:btn-lg" />
+            @endif
+          @else
+            <x-mary-button label="Register" link="{{ route('register') }}" class="btn btn-primary btn-md sm:btn-md lg:btn-lg" />
+          @endif
         </div>
       </div>
 
