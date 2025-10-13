@@ -28,6 +28,10 @@ Route::get('/committee', function () {
     return view('committee');
 })->name('committee');
 
+Route::get('/registrations', function () {
+    return view('registrations');
+})->name('registrations');
+
 Route::get('/teams/university', function () {
     return view('teams-university');
 })->name('teams.university');

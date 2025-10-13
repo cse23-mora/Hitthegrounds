@@ -172,7 +172,7 @@ new class extends Component {
                 </x-mary-button>
 
                 <x-mary-button type="button" wire:click="back" class="btn-ghost w-full">
-                    {{ __('Back to Email') }}
+                    {{ __('Back to Previous Step') }}
                 </x-mary-button>
             </div>
         </form>
