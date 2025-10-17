@@ -19,12 +19,12 @@
                     <figure class="px-6 pt-6">
                         <div class="avatar">
                             <div class="w-32 h-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src="/people/tharaka.avif" alt="Tharaka Jaysena" class="object-cover" />
+                                <img src="/people/tharaka.avif" alt="Tharaka Jayasena" class="object-cover" />
                             </div>
                         </div>
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title text-xl text-base-content">Tharaka Jaysena</h2>
+                        <h2 class="card-title text-xl text-base-content">Tharaka Jayasena</h2>
                         <p class="text-sm text-base-content/70 mb-4">Event Co-Chair</p>
 
                         <div class="divider my-2"></div>
