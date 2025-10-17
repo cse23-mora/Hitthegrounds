@@ -32,7 +32,6 @@
                                 <div>
                                     <p class="font-semibold text-lg">Registration Fee</p>
                                     <p class="text-base-content/80">The registration fee for a team is <span class="font-bold text-primary">LKR 25,000</span>.</p>
-                                    <p class="text-base-content/80 mt-1">Companies wishing to register an <span class="font-bold">additional team must pay LKR 15,000</span> for each new registration.</p>
                                 </div>
                             </div>
 
@@ -42,7 +41,7 @@
                                 </svg>
                                 <div>
                                     <p class="font-semibold text-lg">Partner Companies</p>
-                                    <p class="text-base-content/80">Title, Gold, Silver and Bronze partners do not need to complete team registration through form provided under Registration section; the process will be managed directly with their designated company contact.</p>
+                                    <p class="text-base-content/80">League, Première, Champion and Merit partners do not need to complete team registration through form provided under Registration section; the process will be managed directly with their designated company contact.</p>
                                 </div>
                             </div>
 

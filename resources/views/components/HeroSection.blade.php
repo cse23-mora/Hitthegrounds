@@ -21,6 +21,7 @@
         <!-- Main heading -->
         <div>
           <h1 class="w-full text-center md:text-right" data-aos="fade-up" data-aos-duration="500">
+            <span class="text-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-heading uppercase leading-tight">CSE </span>
             <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-heading uppercase leading-tight">Hit </span>
             <span class="text-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-heading uppercase leading-tight">The </span>
             <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-heading uppercase leading-tight">Grounds </span>
