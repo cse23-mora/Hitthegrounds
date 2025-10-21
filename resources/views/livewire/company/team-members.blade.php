@@ -169,13 +169,13 @@ new class extends Component {
                 <div class="space-y-3">
                     <div>
                         <div class="flex justify-between text-sm mb-1">
-                            <span>Male Players (Required: 6, Max: 9)</span>
-                            <span class="font-semibold {{ $team->getMaleCount() >= 6 ? 'text-success' : 'text-warning' }}">
+                            <span>Male Players</span>
+                            <span class="font-semibold {{ $team->getMaleCount() >= 9 ? 'text-success' : 'text-warning' }}">
                                 {{ $team->getMaleCount() }}/9
                             </span>
                         </div>
                         <progress
-                            class="progress {{ $team->getMaleCount() >= 6 ? 'progress-success' : 'progress-warning' }} w-full"
+                            class="progress {{ $team->getMaleCount() >= 9 ? 'progress-success' : 'progress-warning' }} w-full"
                             value="{{ $team->getMaleCount() }}"
                             max="9"
                         ></progress>
@@ -183,13 +183,13 @@ new class extends Component {
 
                     <div>
                         <div class="flex justify-between text-sm mb-1">
-                            <span>Female Players (Required: 2, Max: 3)</span>
-                            <span class="font-semibold {{ $team->getFemaleCount() >= 2 ? 'text-success' : 'text-warning' }}">
+                            <span>Female Players</span>
+                            <span class="font-semibold {{ $team->getFemaleCount() >= 3 ? 'text-success' : 'text-warning' }}">
                                 {{ $team->getFemaleCount() }}/3
                             </span>
                         </div>
                         <progress
-                            class="progress {{ $team->getFemaleCount() >= 2 ? 'progress-success' : 'progress-warning' }} w-full"
+                            class="progress {{ $team->getFemaleCount() >= 3 ? 'progress-success' : 'progress-warning' }} w-full"
                             value="{{ $team->getFemaleCount() }}"
                             max="3"
                         ></progress>
@@ -205,9 +205,9 @@ new class extends Component {
                         <div>
                             <p class="font-medium">Team Requirements:</p>
                             <ul class="list-disc list-inside mt-1 space-y-1">
-                                <li>Minimum: 8 players (6 male, 2 female)</li>
-                                <li>Additional: Up to 4 more players (3 male, 1 female)</li>
-                                <li>Maximum: 12 players (9 male, 3 female)</li>
+                                <li>On field: 8 players</li>
+                                <li>Reserved: 4 players</li>
+                                <li>Total: 12 players (9 male, 3 female)</li>
                             </ul>
                         </div>
                     </div>
@@ -237,8 +237,8 @@ new class extends Component {
                             </svg>
                             <span>
                                 Team doesn't meet requirements. Need:
-                                @if($team->getMaleCount() < 6) {{ 6 - $team->getMaleCount() }} more male player(s) @endif
-                                @if($team->getFemaleCount() < 2) {{ 2 - $team->getFemaleCount() }} more female player(s) @endif
+                                @if($team->getMaleCount() < 9) {{ 9 - $team->getMaleCount() }} more male player(s) @endif
+                                @if($team->getFemaleCount() < 3) {{ 3 - $team->getFemaleCount() }} more female player(s) @endif
                             </span>
                         </div>
                     @endif
