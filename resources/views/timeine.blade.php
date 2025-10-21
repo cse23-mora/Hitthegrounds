@@ -24,8 +24,8 @@
                   <x-mary-icon name="s-user-group" class="w-8 h-8" />
                 </div>
                 <h3 class="text-xl font-title text-base-content mb-2">Registration Period</h3>
-                <p class="text-success text-3xl font-title">27 Days</p>
-                <p class="text-base-content/70 text-sm mt-2">Oct 13 - Nov 8, 2025</p>
+                <p class="text-success text-3xl font-title">22 Days</p>
+                <p class="text-base-content/70 text-sm mt-2">Oct 21 - Nov 12, 2025</p>
               </div>
             </div>
 
@@ -36,8 +36,8 @@
                   <x-mary-icon name="s-rocket-launch" class="w-8 h-8" />
                 </div>
                 <h3 class="text-xl font-title text-base-content mb-2">Preparation Time</h3>
-                <p class="text-warning text-3xl font-title">20 Days</p>
-                <p class="text-base-content/70 text-sm mt-2">Nov 9 - Nov 29, 2025</p>
+                <p class="text-warning text-3xl font-title">16 Days</p>
+                <p class="text-base-content/70 text-sm mt-2">Nov 13 - Nov 29, 2025</p>
               </div>
             </div>
 

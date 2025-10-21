@@ -342,7 +342,6 @@ new class extends Component {
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Other">Other</option>
                 </select>
                 @error('gender')
                     <label class="label">
@@ -351,7 +350,7 @@ new class extends Component {
                 @enderror
             </div>
 
-            <div class="form-control">
+            {{-- <div class="form-control">
                 <label class="label">
                     <span class="label-text font-medium">Photo (Optional)</span>
                 </label>
@@ -363,7 +362,7 @@ new class extends Component {
                         <span class="label-text-alt text-error">{{ $message }}</span>
                     </label>
                 @enderror
-            </div>
+            </div> --}}
 
             <div class="form-control">
                 <label class="label cursor-pointer justify-start gap-2">
