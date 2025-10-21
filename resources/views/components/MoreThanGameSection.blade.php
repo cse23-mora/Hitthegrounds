@@ -13,7 +13,7 @@
             CHAMPIONSHIP CLASH
           </h3>
           <p class="text-base md:text-lg">
-            Dynamic corporate teams face spirited university squads in matches that inspire excellence
+            Where university teams face off against industry teams in a thrilling battle for the title.
           </p>
         </div>
       </div>
@@ -25,7 +25,7 @@
             THE GRAND ARENA
           </h3>
           <p class="text-base md:text-lg">
-            Played on the iconic University of Moratuwa grounds, where tradition meets prestige.
+            Played on the iconic University of Moratuwa grounds, where every match carries pride and tradition.
           </p>
         </div>
       </div>
@@ -37,7 +37,7 @@
             CONNECTIONS THAT COUNT
           </h3>
           <p class="text-base md:text-lg">
-            Forge lasting ties with leaders, innovators, and rising talent off the pitch.
+            Forge lasting ties with leaders, innovators, and the next generation of talent.
           </p>
         </div>
       </div>
@@ -49,7 +49,7 @@
             BRIDGES THROUGH CRICKET
           </h3>
           <p class="text-base md:text-lg">
-            Strengthening bonds between academia and industry with every cheer and every handshake.
+            Bringing academia and industry together through the shared spirit and passion for the game.
           </p>
         </div>
       </div>
