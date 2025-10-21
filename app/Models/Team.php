@@ -63,7 +63,7 @@ class Team extends Model
         $totalCount = $this->members()->count();
 
         // Minimum: 8 players (6 male, 2 female)
-        return $totalCount >= 8 && $maleCount >= 6 && $femaleCount >= 2;
+        return $totalCount === 12 && $maleCount === 9 && $femaleCount === 3;
     }
 
     public function isValidConfiguration(): bool
@@ -79,6 +79,6 @@ class Team extends Model
 
         // Maximum: 12 players (9 male, 3 female)
         // Starting from minimum (6M, 2F), can add up to 3 male and 1 female
-        return $totalCount <= 12 && $maleCount <= 9 && $femaleCount <= 3;
+        return $totalCount === 12 && $maleCount === 9 && $femaleCount === 3;
     }
 }
