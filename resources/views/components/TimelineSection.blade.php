@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8" data-aos="fade-right" data-aos-duration="2000">
-              <time class="font-title text-lg text-info">October 10th, 2025</time>
+              <time class="font-title text-lg text-info">October 11th, 2025</time>
               <div class="text-xl md:text-2xl font-title text-base-content mt-2">Event Announcement</div>
               <p class="text-base-content/70 text-sm md:text-base mt-2">
                 Official announcement of Hit the Grounds 2025
@@ -42,7 +42,7 @@
               </div>
             </div>
             <div class="timeline-end md:ml-8 mb-10 md:mb-0" data-aos="fade-left" data-aos-duration="2000">
-              <time class="font-title text-lg text-success">October 13th, 2025</time>
+              <time class="font-title text-lg text-success">October 21st, 2025</time>
               <div class="text-xl md:text-2xl font-title text-base-content mt-2">Open Registrations</div>
               <p class="text-base-content/70 text-sm md:text-base mt-2">
                 Team registration opens - secure your spot!
@@ -60,7 +60,7 @@
               </div>
             </div>
             <div class="timeline-start md:text-end mb-10 md:mb-0 md:mr-8" data-aos="fade-right" data-aos-duration="2000">
-              <time class="font-title text-lg text-warning">November 8th, 2025</time>
+              <time class="font-title text-lg text-warning">November 12th, 2025</time>
               <div class="text-xl md:text-2xl font-title text-base-content mt-2">Registration Closing</div>
               <p class="text-base-content/70 text-sm md:text-base mt-2">
                 Last chance to register your team
@@ -97,7 +97,7 @@
               Don't Miss Out!
             </h3>
             <p class="text-base-content/80 text-base md:text-lg mb-6">
-              Register your team before November 8th to be part of the most exciting cricket tournament of the year!
+              Register your team before November 12th to be part of the most exciting cricket tournament of the year!
             </p>
             <div class="card-actions justify-center">
               <x-mary-button label="Register Now" link="{{ route('register') }}" class="btn btn-primary btn-lg" />
