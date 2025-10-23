@@ -21,16 +21,16 @@
         <!-- Main heading -->
         <div>
           <h1 class="w-full text-center md:text-right" data-aos="fade-up" data-aos-duration="500">
-            <span class="text-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-heading uppercase leading-tight">CSE </span>
-            <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-heading uppercase leading-tight">Hit </span>
-            <span class="text-primary text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-heading uppercase leading-tight">The </span>
-            <span class="text-white dark:text-base-content text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal font-heading uppercase leading-tight">Grounds </span>
+            <span class="text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-heading uppercase leading-tight">CSE </span>
+            <span class="text-white dark:text-base-content text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-heading uppercase leading-tight">Hit </span>
+            <span class="text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-heading uppercase leading-tight">The </span>
+            <span class="text-white dark:text-base-content text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-heading uppercase leading-tight">Grounds </span>
           </h1>
           <img src="/cse.avif" alt="CSE" class="block md:hidden mt-2 w-32 mx-auto" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" />
         </div>
 
         <!-- Description -->
-        <p class="text-white dark:text-base-content text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium leading-relaxed max-w-prose text-center md:text-right" data-aos="zoom-in" >
+        <p class="text-white dark:text-base-content text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium leading-relaxed max-w-prose text-center md:text-right" data-aos="zoom-in" >
           Join us for Hit the Grounds – the annual cricket tournament organized by the Department of Computer Science and Engineering of the University of Moratuwa. Where the spirit from the university meets the drive from the industry, it's more than just a game, it's where passion and excellence collide!
         </p>
 
@@ -66,16 +66,16 @@
       <!-- Stats section -->
       <div class="stats stats-vertical sm:stats-horizontal shadow-xl bg-base-100/10 backdrop-blur-sm w-full sm:w-auto lg:min-w-2xl">
         <div class="stat place-items-center py-4 sm:py-6">
-          <div class="stat-value text-white font-title text-4xl sm:text-5xl lg:text-6xl" data-count="20">0+</div>
-          <div class="stat-title text-white dark:text-base-content text-sm sm:text-base">Teams</div>
+          <div class="stat-value text-white font-title text-3xl sm:text-4xl lg:text-5xl" data-count="20">0+</div>
+          <div class="stat-title text-white dark:text-base-content text-xs sm:text-sm">Teams</div>
         </div>
         <div class="stat place-items-center py-4 sm:py-6">
-          <div class="stat-value text-white font-title text-4xl sm:text-5xl lg:text-6xl" data-count="300">0+</div>
-          <div class="stat-title text-white dark:text-base-content text-sm sm:text-base">Participants</div>
+          <div class="stat-value text-white font-title text-3xl sm:text-4xl lg:text-5xl" data-count="300">0+</div>
+          <div class="stat-title text-white dark:text-base-content text-xs sm:text-sm">Participants</div>
         </div>
         <div class="stat place-items-center py-4 sm:py-6">
-          <div class="stat-value text-white font-title text-4xl sm:text-5xl lg:text-6xl" data-count="100">0%</div>
-          <div class="stat-title text-white dark:text-base-content text-sm sm:text-base">Entertainment</div>
+          <div class="stat-value text-white font-title text-3xl sm:text-4xl lg:text-5xl" data-count="100">0%</div>
+          <div class="stat-title text-white dark:text-base-content text-xs sm:text-sm">Entertainment</div>
         </div>
       </div>
     </div>
